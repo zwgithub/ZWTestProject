@@ -1,22 +1,22 @@
 //
-//  ZWBaseViewController.m
+//  ZWBaseNavgationViewController.m
 //  ZWTestProject
 //
 //  Created by shanWu on 16/4/12.
 //  Copyright © 2016年 caozhenwei. All rights reserved.
 //
 
-#import "ZWBaseViewController.h"
+#import "ZWBaseNavgationViewController.h"
 
-@interface ZWBaseViewController ()
+@interface ZWBaseNavgationViewController ()
 
 @end
 
-@implementation ZWBaseViewController
+@implementation ZWBaseNavgationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

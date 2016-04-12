@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		380FF6E51CBC934200EF1528 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF6E41CBC934200EF1528 /* main.m */; };
 		380FF6E81CBC934200EF1528 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF6E71CBC934200EF1528 /* AppDelegate.m */; };
-		380FF6EB1CBC934200EF1528 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF6EA1CBC934200EF1528 /* ViewController.m */; };
 		380FF6EE1CBC934200EF1528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380FF6EC1CBC934200EF1528 /* Main.storyboard */; };
 		380FF6F01CBC934200EF1528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380FF6EF1CBC934200EF1528 /* Assets.xcassets */; };
 		380FF6F31CBC934200EF1528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380FF6F11CBC934200EF1528 /* LaunchScreen.storyboard */; };
 		380FF6FE1CBC934300EF1528 /* ZWTestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF6FD1CBC934300EF1528 /* ZWTestProjectTests.m */; };
 		380FF7091CBC934300EF1528 /* ZWTestProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7081CBC934300EF1528 /* ZWTestProjectUITests.m */; };
 		380FF7191CBCA3AC00EF1528 /* ZWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7181CBCA3AC00EF1528 /* ZWBaseViewController.m */; };
+		380FF71C1CBCA79E00EF1528 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF71B1CBCA79E00EF1528 /* MainViewController.m */; };
+		380FF71F1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF71E1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m */; };
+		380FF7241CBCAB4300EF1528 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7231CBCAB4300EF1528 /* UIView+Additions.m */; };
+		380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7271CBCAF3300EF1528 /* ZWAssociatedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +43,6 @@
 		380FF6E41CBC934200EF1528 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		380FF6E61CBC934200EF1528 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		380FF6E71CBC934200EF1528 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		380FF6E91CBC934200EF1528 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		380FF6EA1CBC934200EF1528 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		380FF6ED1CBC934200EF1528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		380FF6EF1CBC934200EF1528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		380FF6F21CBC934200EF1528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +55,15 @@
 		380FF70A1CBC934300EF1528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		380FF7171CBCA3AC00EF1528 /* ZWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseViewController.h; sourceTree = "<group>"; };
 		380FF7181CBCA3AC00EF1528 /* ZWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseViewController.m; sourceTree = "<group>"; };
+		380FF71A1CBCA79E00EF1528 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		380FF71B1CBCA79E00EF1528 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		380FF71D1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseNavgationViewController.h; sourceTree = "<group>"; };
+		380FF71E1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseNavgationViewController.m; sourceTree = "<group>"; };
+		380FF7221CBCAB4300EF1528 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		380FF7231CBCAB4300EF1528 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		380FF7251CBCAC8100EF1528 /* ZWTestProject-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZWTestProject-PrefixHeader.pch"; sourceTree = "<group>"; };
+		380FF7261CBCAF3300EF1528 /* ZWAssociatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWAssociatedViewController.h; sourceTree = "<group>"; };
+		380FF7271CBCAF3300EF1528 /* ZWAssociatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWAssociatedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,16 +114,20 @@
 		380FF6E21CBC934200EF1528 /* ZWTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				380FF7211CBCAAF200EF1528 /* Additions */,
 				380FF7161CBCA39300EF1528 /* BaseViewControler */,
 				380FF6E61CBC934200EF1528 /* AppDelegate.h */,
 				380FF6E71CBC934200EF1528 /* AppDelegate.m */,
-				380FF6E91CBC934200EF1528 /* ViewController.h */,
-				380FF6EA1CBC934200EF1528 /* ViewController.m */,
+				380FF71A1CBCA79E00EF1528 /* MainViewController.h */,
+				380FF71B1CBCA79E00EF1528 /* MainViewController.m */,
+				380FF7261CBCAF3300EF1528 /* ZWAssociatedViewController.h */,
+				380FF7271CBCAF3300EF1528 /* ZWAssociatedViewController.m */,
 				380FF6EC1CBC934200EF1528 /* Main.storyboard */,
 				380FF6EF1CBC934200EF1528 /* Assets.xcassets */,
 				380FF6F11CBC934200EF1528 /* LaunchScreen.storyboard */,
 				380FF6F41CBC934200EF1528 /* Info.plist */,
 				380FF6E31CBC934200EF1528 /* Supporting Files */,
+				380FF7251CBCAC8100EF1528 /* ZWTestProject-PrefixHeader.pch */,
 			);
 			path = ZWTestProject;
 			sourceTree = "<group>";
@@ -149,8 +163,19 @@
 			children = (
 				380FF7171CBCA3AC00EF1528 /* ZWBaseViewController.h */,
 				380FF7181CBCA3AC00EF1528 /* ZWBaseViewController.m */,
+				380FF71D1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.h */,
+				380FF71E1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m */,
 			);
 			path = BaseViewControler;
+			sourceTree = "<group>";
+		};
+		380FF7211CBCAAF200EF1528 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				380FF7221CBCAB4300EF1528 /* UIView+Additions.h */,
+				380FF7231CBCAB4300EF1528 /* UIView+Additions.m */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,10 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380FF7241CBCAB4300EF1528 /* UIView+Additions.m in Sources */,
 				380FF7191CBCA3AC00EF1528 /* ZWBaseViewController.m in Sources */,
-				380FF6EB1CBC934200EF1528 /* ViewController.m in Sources */,
 				380FF6E81CBC934200EF1528 /* AppDelegate.m in Sources */,
 				380FF6E51CBC934200EF1528 /* main.m in Sources */,
+				380FF71C1CBCA79E00EF1528 /* MainViewController.m in Sources */,
+				380FF71F1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m in Sources */,
+				380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +453,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZWTestProject/ZWTestProject-PrefixHeader.pch";
 				INFOPLIST_FILE = ZWTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caozhenwei.ZWTestProject;
@@ -436,6 +466,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZWTestProject/ZWTestProject-PrefixHeader.pch";
 				INFOPLIST_FILE = ZWTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caozhenwei.ZWTestProject;

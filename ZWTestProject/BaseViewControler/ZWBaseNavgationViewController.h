@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ZWBaseNavgationViewController.h
 //  ZWTestProject
 //
 //  Created by shanWu on 16/4/12.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ZWBaseNavgationViewController : UINavigationController
 
 @end
-

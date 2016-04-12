@@ -1,5 +1,5 @@
 //
-//  ZWBaseViewController.h
+//  UIView+Additions.h
 //  ZWTestProject
 //
 //  Created by shanWu on 16/4/12.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZWBaseViewController : UIViewController
+@interface UIView (Additions)
 
-@property (nonatomic, strong) NSString *navTitleStr;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
 
 @end
