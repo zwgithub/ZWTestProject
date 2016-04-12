@@ -15,6 +15,7 @@
 		380FF6F31CBC934200EF1528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380FF6F11CBC934200EF1528 /* LaunchScreen.storyboard */; };
 		380FF6FE1CBC934300EF1528 /* ZWTestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF6FD1CBC934300EF1528 /* ZWTestProjectTests.m */; };
 		380FF7091CBC934300EF1528 /* ZWTestProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7081CBC934300EF1528 /* ZWTestProjectUITests.m */; };
+		380FF7191CBCA3AC00EF1528 /* ZWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7181CBCA3AC00EF1528 /* ZWBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		380FF7041CBC934300EF1528 /* ZWTestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWTestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		380FF7081CBC934300EF1528 /* ZWTestProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWTestProjectUITests.m; sourceTree = "<group>"; };
 		380FF70A1CBC934300EF1528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380FF7171CBCA3AC00EF1528 /* ZWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseViewController.h; sourceTree = "<group>"; };
+		380FF7181CBCA3AC00EF1528 /* ZWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		380FF6E21CBC934200EF1528 /* ZWTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				380FF7161CBCA39300EF1528 /* BaseViewControler */,
 				380FF6E61CBC934200EF1528 /* AppDelegate.h */,
 				380FF6E71CBC934200EF1528 /* AppDelegate.m */,
 				380FF6E91CBC934200EF1528 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				380FF70A1CBC934300EF1528 /* Info.plist */,
 			);
 			path = ZWTestProjectUITests;
+			sourceTree = "<group>";
+		};
+		380FF7161CBCA39300EF1528 /* BaseViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				380FF7171CBCA3AC00EF1528 /* ZWBaseViewController.h */,
+				380FF7181CBCA3AC00EF1528 /* ZWBaseViewController.m */,
+			);
+			path = BaseViewControler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380FF7191CBCA3AC00EF1528 /* ZWBaseViewController.m in Sources */,
 				380FF6EB1CBC934200EF1528 /* ViewController.m in Sources */,
 				380FF6E81CBC934200EF1528 /* AppDelegate.m in Sources */,
 				380FF6E51CBC934200EF1528 /* main.m in Sources */,
@@ -496,6 +510,7 @@
 				380FF70F1CBC934300EF1528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380FF7101CBC934300EF1528 /* Build configuration list for PBXNativeTarget "ZWTestProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +519,7 @@
 				380FF7121CBC934300EF1528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380FF7131CBC934300EF1528 /* Build configuration list for PBXNativeTarget "ZWTestProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +528,7 @@
 				380FF7151CBC934300EF1528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
