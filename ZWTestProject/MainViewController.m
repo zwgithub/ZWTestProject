@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "ZWAssociatedViewController.h"
+#import "ZWRuntimeViewController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -31,6 +32,7 @@
     
     _dataArray = @[
                    @{@"ZWAssociatedViewController" : @"关联对象测试"},
+                   @{@"ZWRuntimeViewController" : @"运行时常用函数"},
                    ];
 }
 
