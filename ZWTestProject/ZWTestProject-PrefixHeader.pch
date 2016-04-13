@@ -10,5 +10,6 @@
 #define ZWTestProject_PrefixHeader_pch
 
 #import "UIView+Additions.h"
+#import "UIViewController+ExchangeImplemations.h"
 
 #endif /* ZWTestProject_PrefixHeader_pch */
