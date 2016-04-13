@@ -20,6 +20,7 @@
 		380FF7241CBCAB4300EF1528 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7231CBCAB4300EF1528 /* UIView+Additions.m */; };
 		380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7271CBCAF3300EF1528 /* ZWAssociatedViewController.m */; };
 		380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF72A1CBCF37800EF1528 /* ZWRuntimeViewController.m */; };
+		380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		380FF7271CBCAF3300EF1528 /* ZWAssociatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWAssociatedViewController.m; sourceTree = "<group>"; };
 		380FF7291CBCF37800EF1528 /* ZWRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWRuntimeViewController.h; sourceTree = "<group>"; };
 		380FF72A1CBCF37800EF1528 /* ZWRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWRuntimeViewController.m; sourceTree = "<group>"; };
+		380FF7FB1CBE176600EF1528 /* ZWForwardInvocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWForwardInvocationViewController.h; sourceTree = "<group>"; };
+		380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWForwardInvocationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				380FF7271CBCAF3300EF1528 /* ZWAssociatedViewController.m */,
 				380FF7291CBCF37800EF1528 /* ZWRuntimeViewController.h */,
 				380FF72A1CBCF37800EF1528 /* ZWRuntimeViewController.m */,
+				380FF7FB1CBE176600EF1528 /* ZWForwardInvocationViewController.h */,
+				380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */,
 				380FF6EC1CBC934200EF1528 /* Main.storyboard */,
 				380FF6EF1CBC934200EF1528 /* Assets.xcassets */,
 				380FF6F11CBC934200EF1528 /* LaunchScreen.storyboard */,
@@ -320,6 +325,7 @@
 				380FF6E51CBC934200EF1528 /* main.m in Sources */,
 				380FF71C1CBCA79E00EF1528 /* MainViewController.m in Sources */,
 				380FF71F1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m in Sources */,
+				380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */,
 				380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
