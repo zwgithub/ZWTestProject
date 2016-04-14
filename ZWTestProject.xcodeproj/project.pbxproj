@@ -22,6 +22,8 @@
 		380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF72A1CBCF37800EF1528 /* ZWRuntimeViewController.m */; };
 		380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */; };
 		380FF80C1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF80B1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m */; };
+		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
+		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWForwardInvocationViewController.m; sourceTree = "<group>"; };
 		380FF80A1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ExchangeImplemations.h"; sourceTree = "<group>"; };
 		380FF80B1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ExchangeImplemations.m"; sourceTree = "<group>"; };
+		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
+		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
+		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
+		3877302D1CBF55D200FCE93E /* ZWHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,10 @@
 				380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */,
 				380FF80A1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.h */,
 				380FF80B1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m */,
+				387730291CBF55B500FCE93E /* ZWLeakViewController.h */,
+				3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */,
+				3877302C1CBF55D200FCE93E /* ZWHandler.h */,
+				3877302D1CBF55D200FCE93E /* ZWHandler.m */,
 				380FF6EC1CBC934200EF1528 /* Main.storyboard */,
 				380FF6EF1CBC934200EF1528 /* Assets.xcassets */,
 				380FF6F11CBC934200EF1528 /* LaunchScreen.storyboard */,
@@ -325,12 +335,14 @@
 			files = (
 				380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */,
 				380FF80C1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m in Sources */,
+				3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */,
 				380FF7241CBCAB4300EF1528 /* UIView+Additions.m in Sources */,
 				380FF7191CBCA3AC00EF1528 /* ZWBaseViewController.m in Sources */,
 				380FF6E81CBC934200EF1528 /* AppDelegate.m in Sources */,
 				380FF6E51CBC934200EF1528 /* main.m in Sources */,
 				380FF71C1CBCA79E00EF1528 /* MainViewController.m in Sources */,
 				380FF71F1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m in Sources */,
+				3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */,
 				380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */,
 				380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */,
 			);
