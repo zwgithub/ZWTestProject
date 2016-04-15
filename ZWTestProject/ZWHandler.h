@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^blk_t)(void);
+
 @interface ZWHandler : NSObject
 
 + (void)makeApiDic:(id)dic;

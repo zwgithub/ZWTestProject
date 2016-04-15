@@ -18,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [ZWHandler makeApiDic:self];
+//    [ZWHandler makeApiDic:self];
+    
+   
+    id object = [[ZWHandler alloc] init];
+    NSLog(@"%@",object);
 }
 
 - (void)dealloc

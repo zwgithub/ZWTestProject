@@ -11,6 +11,7 @@
 #import "ZWRuntimeViewController.h"
 #import "ZWForwardInvocationViewController.h"
 #import "ZWLeakViewController.h"
+#import "ZWBlockViewController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -37,6 +38,7 @@
                    @{@"ZWRuntimeViewController" : @"运行时常用函数"},
                    @{@"ZWForwardInvocationViewController" : @"消息转发测试"},
                    @{@"ZWLeakViewController" : @"泄漏测试"},
+                   @{@"ZWBlockViewController" : @"Block 原理探究"},
                    ];
 }
 

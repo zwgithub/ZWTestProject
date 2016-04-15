@@ -8,7 +8,9 @@
 
 #import "ZWHandler.h"
 
-@interface ZWHandler ()
+@interface ZWHandler () {
+    blk_t _blk;
+}
 
 @property(nonatomic ,strong) NSMutableDictionary *delegateMap;
 
@@ -16,10 +18,24 @@
 
 @implementation ZWHandler
 
+- (id)init{
+    self = [super init];
+    if (self) {
+        _blk = ^{
+            NSLog(@"%@",self);
+        };
+    }
+    return self;
+}
+
+-(void)dealloc
+{
+    NSLog(@"ZWHandler dealloc!");
+}
+
 +(ZWHandler *)sharedInstance{
     static ZWHandler *instance = nil;
     static dispatch_once_t pred;
-    
     dispatch_once(&pred, ^{
         instance = [[ZWHandler alloc] init];
     });
