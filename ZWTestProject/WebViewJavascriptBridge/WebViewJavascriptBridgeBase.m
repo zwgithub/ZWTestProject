@@ -66,6 +66,9 @@ static int logMaxLength = 500;
         return;
     }
 
+    //从队列里取出的 JS 调用 OC 的数据是这样的
+    //[{"handlerName":"testObjcCallback","data":{"foo":"bar"},"callbackId":"cb_1_1461048431852"}]
+    
     id messages = [self _deserializeMessageJSON:messageQueueString];
     for (WVJBMessage* message in messages) {
         if (![message isKindOfClass:[WVJBMessage class]]) {

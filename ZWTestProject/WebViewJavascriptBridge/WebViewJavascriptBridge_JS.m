@@ -44,6 +44,15 @@ NSString * WebViewJavascriptBridge_js() {
 //        alert("bridge_js中registerHandler");
 		messageHandlers[handlerName] = handler;
 	}
+        
+    function alertObjVars(obj){
+        var description = "";
+        for(var i in obj){
+            var property=obj[i];
+            description+=i+" = "+property+"\n";
+        }
+        alert(description);
+    }
 	
 	function callHandler(handlerName, data, responseCallback) {
 		if (arguments.length == 2 && typeof data == 'function') {
@@ -54,13 +63,21 @@ NSString * WebViewJavascriptBridge_js() {
 	}
 	
 	function _doSend(message, responseCallback) {
-//        alert("_doSend");
+        //mesage 包含responseId,responseData
+        //responseCallback为空
+        
+        //alertObjVars(message);
+        //alertObjVars(responseCallback);
+        
 		if (responseCallback) {
 			var callbackId = 'cb_'+(uniqueId++)+'_'+new Date().getTime();
 			responseCallbacks[callbackId] = responseCallback;
 			message['callbackId'] = callbackId;
 		}
-		sendMessageQueue.push(message);
+        
+        alert("_doSend");
+        
+        sendMessageQueue.push(message);
 		messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE;
 	}
 
@@ -73,7 +90,9 @@ NSString * WebViewJavascriptBridge_js() {
 	}
 
 	function _dispatchMessageFromObjC(messageJSON) {
+        //messageJSON 里面包含 data  callbackId  handlerName
 		setTimeout(function _timeoutDispatchMessageFromObjC() {
+            //使用 JSON.parse 将 JSON 字符串转换为对象
 			var message = JSON.parse(messageJSON);
 			var messageHandler;
 			var responseCallback;
@@ -92,7 +111,6 @@ NSString * WebViewJavascriptBridge_js() {
 						_doSend({ responseId:callbackResponseId, responseData:responseData });
 					};
 				}
-				
 				var handler = messageHandlers[message.handlerName];
 				try {
 					handler(message.data, responseCallback);

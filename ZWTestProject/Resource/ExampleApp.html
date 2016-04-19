@@ -8,7 +8,7 @@
 		.logLine { border-bottom:1px solid #ccc; padding:4px 2px; font-family:courier; font-size:11px; }
 	</style>
 </head><body>
-	<h1>WebViewJavascriptBridge Demo</h1>
+	<h1>OC 与 JS 交互测试</h1>
     
 	<script>
         //alert("在 javascript 中！");
@@ -29,8 +29,6 @@
 
     setupWebViewJavascriptBridge(function(bridge) {
                                  
-                                 
-                                 
 		var uniqueId = 1
 		function log(message, data) {
 			var log = document.getElementById('log')
@@ -45,19 +43,19 @@
 		bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
 			log('ObjC called testJavascriptHandler with', data)
 			var responseData = { 'oc调用js后，js给oc的回调':'hello' }
-			//log('JS responding with', responseData)
+			log('JS responding with', responseData)
 			responseCallback(responseData)
 		})
 
 		document.body.appendChild(document.createElement('br'))
 
 		var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
-		callbackButton.innerHTML = 'Fire testObjcCallback'
+		callbackButton.innerHTML = '测试 JS 调用 OC 函数'
 		callbackButton.onclick = function(e) {
 			e.preventDefault()
 			log('JS calling handler "testObjcCallback"')
 			bridge.callHandler('testObjcCallback', {'foo': 'bar'}, function(response) {
-				log('JS got response', response)
+				log('JS 得到的回应数据：', response)
 			})
 		}
 	})

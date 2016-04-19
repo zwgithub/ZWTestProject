@@ -8,6 +8,7 @@
 
 #import "ZWWebViewJavascriptBridgeController.h"
 #import "WebViewJavascriptBridge.h"
+#import "ZWWebViewTestViewController.h"
 
 @interface ZWWebViewJavascriptBridgeController ()
 
@@ -40,12 +41,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self createRightItem];
+}
+
+- (void)createRightItem {
+    UIButton *rightItemButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
+    [rightItemButton addTarget:self action:@selector(rightItemButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [rightItemButton setTitle:@"测试" forState:UIControlStateNormal];
+    [rightItemButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightItemButton];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)rightItemButtonAction {
+    ZWWebViewTestViewController *ctl = [[ZWWebViewTestViewController alloc] init];
+    [self.navigationController pushViewController:ctl animated:YES];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -61,7 +75,7 @@
     
     UIButton *callbackButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     callbackButton.backgroundColor = [UIColor purpleColor];
-    [callbackButton setTitle:@"调用 JS 代码" forState:UIControlStateNormal];
+    [callbackButton setTitle:@"OC 调用 JS 代码" forState:UIControlStateNormal];
     [callbackButton addTarget:self action:@selector(callHandler:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:callbackButton];
 

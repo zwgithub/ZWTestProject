@@ -29,6 +29,7 @@
 		3816F9211CC5D5680007616E /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F91D1CC5D5680007616E /* WKWebViewJavascriptBridge.m */; };
 		3816F9241CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F9231CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m */; };
 		3816F9271CC5D62F0007616E /* ExampleApp.html in Resources */ = {isa = PBXBuildFile; fileRef = 3816F9261CC5D62F0007616E /* ExampleApp.html */; };
+		3816F92A1CC5DC8C0007616E /* ZWWebViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F9291CC5DC8C0007616E /* ZWWebViewTestViewController.m */; };
 		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
@@ -97,6 +98,8 @@
 		3816F9221CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWebViewJavascriptBridgeController.h; sourceTree = "<group>"; };
 		3816F9231CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWebViewJavascriptBridgeController.m; sourceTree = "<group>"; };
 		3816F9261CC5D62F0007616E /* ExampleApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleApp.html; sourceTree = "<group>"; };
+		3816F9281CC5DC8C0007616E /* ZWWebViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWebViewTestViewController.h; sourceTree = "<group>"; };
+		3816F9291CC5DC8C0007616E /* ZWWebViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWebViewTestViewController.m; sourceTree = "<group>"; };
 		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
 		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
 		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				387730361CC0F33B00FCE93E /* ZWBlockViewController.m */,
 				3816F9221CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.h */,
 				3816F9231CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m */,
+				3816F9281CC5DC8C0007616E /* ZWWebViewTestViewController.h */,
+				3816F9291CC5DC8C0007616E /* ZWWebViewTestViewController.m */,
 				3877305E1CC34C5A00FCE93E /* ZWObject.h */,
 				3877305F1CC34C5A00FCE93E /* ZWObject.m */,
 				3877302C1CBF55D200FCE93E /* ZWHandler.h */,
@@ -242,10 +247,10 @@
 		3816F9151CC5D5680007616E /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
-				3816F9161CC5D5680007616E /* WebViewJavascriptBridge.h */,
-				3816F9171CC5D5680007616E /* WebViewJavascriptBridge.m */,
 				3816F9181CC5D5680007616E /* WebViewJavascriptBridge_JS.h */,
 				3816F9191CC5D5680007616E /* WebViewJavascriptBridge_JS.m */,
+				3816F9161CC5D5680007616E /* WebViewJavascriptBridge.h */,
+				3816F9171CC5D5680007616E /* WebViewJavascriptBridge.m */,
 				3816F91A1CC5D5680007616E /* WebViewJavascriptBridgeBase.h */,
 				3816F91B1CC5D5680007616E /* WebViewJavascriptBridgeBase.m */,
 				3816F91C1CC5D5680007616E /* WKWebViewJavascriptBridge.h */,
@@ -396,6 +401,7 @@
 				380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */,
 				3816F91E1CC5D5680007616E /* WebViewJavascriptBridge.m in Sources */,
 				3816F9241CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m in Sources */,
+				3816F92A1CC5DC8C0007616E /* ZWWebViewTestViewController.m in Sources */,
 				380FF80C1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m in Sources */,
 				3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */,
 				380FF7241CBCAB4300EF1528 /* UIView+Additions.m in Sources */,

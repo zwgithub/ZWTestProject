@@ -40,7 +40,7 @@
                    @{@"ZWForwardInvocationViewController" : @"消息转发测试"},
                    @{@"ZWLeakViewController" : @"泄漏测试"},
                    @{@"ZWBlockViewController" : @"Block 原理探究"},
-                   @{@"ZWWebViewJavascriptBridgeController" : @"与 H5 交互"},
+                   @{@"ZWWebViewJavascriptBridgeController" : @"OC 与 JS 交互"},
                    ];
 }
 
