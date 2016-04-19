@@ -22,6 +22,13 @@
 		380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF72A1CBCF37800EF1528 /* ZWRuntimeViewController.m */; };
 		380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */; };
 		380FF80C1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m in Sources */ = {isa = PBXBuildFile; fileRef = 380FF80B1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m */; };
+		3816F9111CC4BFC60007616E /* ZWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F9101CC4BFC60007616E /* ZWTabBarController.m */; };
+		3816F91E1CC5D5680007616E /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F9171CC5D5680007616E /* WebViewJavascriptBridge.m */; };
+		3816F91F1CC5D5680007616E /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F9191CC5D5680007616E /* WebViewJavascriptBridge_JS.m */; };
+		3816F9201CC5D5680007616E /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F91B1CC5D5680007616E /* WebViewJavascriptBridgeBase.m */; };
+		3816F9211CC5D5680007616E /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F91D1CC5D5680007616E /* WKWebViewJavascriptBridge.m */; };
+		3816F9241CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816F9231CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m */; };
+		3816F9271CC5D62F0007616E /* ExampleApp.html in Resources */ = {isa = PBXBuildFile; fileRef = 3816F9261CC5D62F0007616E /* ExampleApp.html */; };
 		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
@@ -77,6 +84,19 @@
 		380FF7FC1CBE176600EF1528 /* ZWForwardInvocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWForwardInvocationViewController.m; sourceTree = "<group>"; };
 		380FF80A1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ExchangeImplemations.h"; sourceTree = "<group>"; };
 		380FF80B1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ExchangeImplemations.m"; sourceTree = "<group>"; };
+		3816F90F1CC4BFC60007616E /* ZWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWTabBarController.h; sourceTree = "<group>"; };
+		3816F9101CC4BFC60007616E /* ZWTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWTabBarController.m; sourceTree = "<group>"; };
+		3816F9161CC5D5680007616E /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		3816F9171CC5D5680007616E /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		3816F9181CC5D5680007616E /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
+		3816F9191CC5D5680007616E /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
+		3816F91A1CC5D5680007616E /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		3816F91B1CC5D5680007616E /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		3816F91C1CC5D5680007616E /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		3816F91D1CC5D5680007616E /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		3816F9221CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWebViewJavascriptBridgeController.h; sourceTree = "<group>"; };
+		3816F9231CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWebViewJavascriptBridgeController.m; sourceTree = "<group>"; };
+		3816F9261CC5D62F0007616E /* ExampleApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleApp.html; sourceTree = "<group>"; };
 		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
 		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
 		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
@@ -135,6 +155,8 @@
 		380FF6E21CBC934200EF1528 /* ZWTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				3816F9251CC5D6200007616E /* Resource */,
+				3816F9151CC5D5680007616E /* WebViewJavascriptBridge */,
 				380FF7211CBCAAF200EF1528 /* Additions */,
 				380FF7161CBCA39300EF1528 /* BaseViewControler */,
 				380FF6E61CBC934200EF1528 /* AppDelegate.h */,
@@ -153,6 +175,8 @@
 				3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */,
 				387730351CC0F33B00FCE93E /* ZWBlockViewController.h */,
 				387730361CC0F33B00FCE93E /* ZWBlockViewController.m */,
+				3816F9221CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.h */,
+				3816F9231CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m */,
 				3877305E1CC34C5A00FCE93E /* ZWObject.h */,
 				3877305F1CC34C5A00FCE93E /* ZWObject.m */,
 				3877302C1CBF55D200FCE93E /* ZWHandler.h */,
@@ -200,6 +224,8 @@
 				380FF7181CBCA3AC00EF1528 /* ZWBaseViewController.m */,
 				380FF71D1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.h */,
 				380FF71E1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m */,
+				3816F90F1CC4BFC60007616E /* ZWTabBarController.h */,
+				3816F9101CC4BFC60007616E /* ZWTabBarController.m */,
 			);
 			path = BaseViewControler;
 			sourceTree = "<group>";
@@ -211,6 +237,29 @@
 				380FF7231CBCAB4300EF1528 /* UIView+Additions.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		3816F9151CC5D5680007616E /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				3816F9161CC5D5680007616E /* WebViewJavascriptBridge.h */,
+				3816F9171CC5D5680007616E /* WebViewJavascriptBridge.m */,
+				3816F9181CC5D5680007616E /* WebViewJavascriptBridge_JS.h */,
+				3816F9191CC5D5680007616E /* WebViewJavascriptBridge_JS.m */,
+				3816F91A1CC5D5680007616E /* WebViewJavascriptBridgeBase.h */,
+				3816F91B1CC5D5680007616E /* WebViewJavascriptBridgeBase.m */,
+				3816F91C1CC5D5680007616E /* WKWebViewJavascriptBridge.h */,
+				3816F91D1CC5D5680007616E /* WKWebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		3816F9251CC5D6200007616E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3816F9261CC5D62F0007616E /* ExampleApp.html */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +368,7 @@
 				380FF6F31CBC934200EF1528 /* LaunchScreen.storyboard in Resources */,
 				380FF6F01CBC934200EF1528 /* Assets.xcassets in Resources */,
 				380FF6EE1CBC934200EF1528 /* Main.storyboard in Resources */,
+				3816F9271CC5D62F0007616E /* ExampleApp.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,12 +394,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */,
+				3816F91E1CC5D5680007616E /* WebViewJavascriptBridge.m in Sources */,
+				3816F9241CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m in Sources */,
 				380FF80C1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m in Sources */,
 				3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */,
 				380FF7241CBCAB4300EF1528 /* UIView+Additions.m in Sources */,
 				380FF7191CBCA3AC00EF1528 /* ZWBaseViewController.m in Sources */,
 				380FF6E81CBC934200EF1528 /* AppDelegate.m in Sources */,
+				3816F9211CC5D5680007616E /* WKWebViewJavascriptBridge.m in Sources */,
+				3816F9111CC4BFC60007616E /* ZWTabBarController.m in Sources */,
 				380FF6E51CBC934200EF1528 /* main.m in Sources */,
+				3816F91F1CC5D5680007616E /* WebViewJavascriptBridge_JS.m in Sources */,
+				3816F9201CC5D5680007616E /* WebViewJavascriptBridgeBase.m in Sources */,
 				387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */,
 				380FF71C1CBCA79E00EF1528 /* MainViewController.m in Sources */,
 				387730601CC34C5A00FCE93E /* ZWObject.m in Sources */,

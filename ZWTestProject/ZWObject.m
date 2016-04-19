@@ -25,6 +25,9 @@ typedef void(^blk)(void);
     _blk = ^{
         NSLog(@"%@",weakSelf);
     };
+    
+//    [self test:@"1" :_blk :@""];
+    
     return self;
 }
 
@@ -32,8 +35,16 @@ typedef void(^blk)(void);
     _blk();
 }
 
+- (void)test:(NSString *)str :(blk)haha :(NSString *)string{
+    _blk();
+}
+
 - (void)dealloc {
     NSLog(@"ZWObject dealloc");
+}
+
+- (NSString *)description {
+    return @"123";
 }
 
 @end

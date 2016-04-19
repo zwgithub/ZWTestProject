@@ -12,6 +12,7 @@
 #import "ZWForwardInvocationViewController.h"
 #import "ZWLeakViewController.h"
 #import "ZWBlockViewController.h"
+#import "ZWWebViewJavascriptBridgeController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -39,6 +40,7 @@
                    @{@"ZWForwardInvocationViewController" : @"消息转发测试"},
                    @{@"ZWLeakViewController" : @"泄漏测试"},
                    @{@"ZWBlockViewController" : @"Block 原理探究"},
+                   @{@"ZWWebViewJavascriptBridgeController" : @"与 H5 交互"},
                    ];
 }
 

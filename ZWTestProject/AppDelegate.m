@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "ZWBaseNavgationViewController.h"
+#import "ZWTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,11 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
+    
+//    ZWTabBarController *tabbarController = [[ZWTabBarController alloc] init];
+//    self.window.rootViewController = tabbarController;
+//    [self.window makeKeyAndVisible];
+//    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
