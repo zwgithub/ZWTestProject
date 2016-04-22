@@ -22,7 +22,7 @@ NSString * WebViewJavascriptBridge_js() {
         
         //alert("bridge_js中");
         
-        //把一个 JSON 串赋值给 WebViewJavascriptBridge
+    //把一个 JSON 串赋值给 WebViewJavascriptBridge
 	window.WebViewJavascriptBridge = {
 		registerHandler: registerHandler,
 		callHandler: callHandler,
@@ -41,7 +41,6 @@ NSString * WebViewJavascriptBridge_js() {
 	var uniqueId = 1;
 
 	function registerHandler(handlerName, handler) {
-//        alert("bridge_js中registerHandler");
 		messageHandlers[handlerName] = handler;
 	}
         
@@ -66,16 +65,11 @@ NSString * WebViewJavascriptBridge_js() {
         //mesage 包含responseId,responseData
         //responseCallback为空
         
-        //alertObjVars(message);
-        //alertObjVars(responseCallback);
-        
 		if (responseCallback) {
 			var callbackId = 'cb_'+(uniqueId++)+'_'+new Date().getTime();
 			responseCallbacks[callbackId] = responseCallback;
 			message['callbackId'] = callbackId;
 		}
-        
-        alert("_doSend");
         
         sendMessageQueue.push(message);
 		messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE;

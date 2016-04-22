@@ -161,8 +161,10 @@
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;
     if ([_base isCorrectProcotocolScheme:url]) {
         if ([_base isBridgeLoadedURL:url]) {
+            //拦截到 wvjbscheme://__BRIDGE_LOADED__
             [_base injectJavascriptFile];
         } else if ([_base isQueueMessageURL:url]) {
+            //拦截到 wvjbscheme://__WVJB_QUEUE_MESSAGE__
             NSString *messageQueueString = [self _evaluateJavascript:[_base webViewJavascriptFetchQueyCommand]];
             [_base flushMessageQueue:messageQueueString];
         } else {

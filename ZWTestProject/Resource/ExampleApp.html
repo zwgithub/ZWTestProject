@@ -11,54 +11,58 @@
 	<h1>OC 与 JS 交互测试</h1>
     
 	<script>
-        //alert("在 javascript 中！");
-	window.onerror = function(err) {
-		log('window.onerror: ' + err)
-	}
+            //alert("在 javascript 中！");
+        window.onerror = function(err) {
+            log('window.onerror: ' + err)
+        }
 
-    function setupWebViewJavascriptBridge(callback) {
-        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
-        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
-        window.WVJBCallbacks = [callback];
-        var WVJBIframe = document.createElement('iframe');
-        WVJBIframe.style.display = 'none';
-        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
-        document.documentElement.appendChild(WVJBIframe);
-        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
-    }
+        function setupWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) {
+                return callback(WebViewJavascriptBridge);
+            }
+            if (window.WVJBCallbacks) {
+                return window.WVJBCallbacks.push(callback);
+            }
+            window.WVJBCallbacks = [callback];
+            var WVJBIframe = document.createElement('iframe');
+            WVJBIframe.style.display = 'none';
+            WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+            document.documentElement.appendChild(WVJBIframe);
+            setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+        }
 
-    setupWebViewJavascriptBridge(function(bridge) {
-                                 
-		var uniqueId = 1
-		function log(message, data) {
-			var log = document.getElementById('log')
-			var el = document.createElement('div')
-			el.className = 'logLine'
-			el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
-			if (log.children.length) { log.insertBefore(el, log.children[0]) }
-			else { log.appendChild(el) }
-		}
+        setupWebViewJavascriptBridge(function(bridge) {
+                                     
+            var uniqueId = 1
+            function log(message, data) {
+                var log = document.getElementById('log')
+                var el = document.createElement('div')
+                el.className = 'logLine'
+                el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+                if (log.children.length) { log.insertBefore(el, log.children[0]) }
+                else { log.appendChild(el) }
+            }
 
-                                 //alert("在exampleApp setupWebViewJavascriptBridge 中");
-		bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
-			log('ObjC called testJavascriptHandler with', data)
-			var responseData = { 'oc调用js后，js给oc的回调':'hello' }
-			log('JS responding with', responseData)
-			responseCallback(responseData)
-		})
+            //alert("在exampleApp setupWebViewJavascriptBridge 中");
+            bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
+                log('ObjC called testJavascriptHandler with', data)
+                var responseData = { 'oc调用js后，js给oc的回调':'hello' }
+                log('JS responding with', responseData)
+                responseCallback(responseData)
+            })
 
-		document.body.appendChild(document.createElement('br'))
+            document.body.appendChild(document.createElement('br'))
 
-		var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
-		callbackButton.innerHTML = '测试 JS 调用 OC 函数'
-		callbackButton.onclick = function(e) {
-			e.preventDefault()
-			log('JS calling handler "testObjcCallback"')
-			bridge.callHandler('testObjcCallback', {'foo': 'bar'}, function(response) {
-				log('JS 得到的回应数据：', response)
-			})
-		}
-	})
+            var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
+            callbackButton.innerHTML = '测试 JS 调用 OC 函数'
+            callbackButton.onclick = function(e) {
+                e.preventDefault()
+                log('JS calling handler "testObjcCallback"')
+                bridge.callHandler('testObjcCallback', {'foo': 'bar'}, function(response) {
+                    log('JS 得到的回应数据：', response)
+                })
+            }
+        })
 	</script>
 	<div id='buttons'></div> <div id='log'></div>
 </body></html>

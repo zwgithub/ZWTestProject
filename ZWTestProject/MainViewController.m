@@ -13,6 +13,7 @@
 #import "ZWLeakViewController.h"
 #import "ZWBlockViewController.h"
 #import "ZWWebViewJavascriptBridgeController.h"
+#import "ZWScrollViewTestViewController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -35,12 +36,14 @@
     [self.view addSubview:_tableView];
     
     _dataArray = @[
-                   @{@"ZWAssociatedViewController" : @"关联对象测试"},
-                   @{@"ZWRuntimeViewController" : @"运行时常用函数"},
-                   @{@"ZWForwardInvocationViewController" : @"消息转发测试"},
-                   @{@"ZWLeakViewController" : @"泄漏测试"},
-                   @{@"ZWBlockViewController" : @"Block 原理探究"},
-                   @{@"ZWWebViewJavascriptBridgeController" : @"OC 与 JS 交互"},
+                       @{@"ZWAssociatedViewController" : @"关联对象测试"},
+                       @{@"ZWRuntimeViewController" : @"运行时常用函数"},
+                       @{@"ZWForwardInvocationViewController" : @"消息转发测试"},
+                       @{@"ZWLeakViewController" : @"泄漏测试"},
+                       @{@"ZWBlockViewController" : @"Block 原理探究"},
+                       @{@"ZWWebViewJavascriptBridgeController" : @"OC 与 JS 交互"},
+                       @{@"ZWPhotoBrowserViewController" : @"图片浏览"},
+                       @{@"ZWScrollViewTestViewController" : @"scrollView 测试"},
                    ];
 }
 

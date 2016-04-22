@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A44B3DE8B143B9E58ECE5347BBAE1D1AB80E7B4E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A44B3DE8B143B9E58ECE5347BBAE1D1AB80E7B4E" : 0,
+    "ADE105B5E71C88C0ABF755C6B17CA1BD822CE0AB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DC38D74F-58C6-4ADB-AFE0-A578F665D140",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A44B3DE8B143B9E58ECE5347BBAE1D1AB80E7B4E" : "ZWTestProject\/",
+    "ADE105B5E71C88C0ABF755C6B17CA1BD822CE0AB" : "ZWTestProject\/ZWTestProject\/MJPhotoBrowser\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ZWTestProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ZWTestProject.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:zwgithub\/ZWTestProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A44B3DE8B143B9E58ECE5347BBAE1D1AB80E7B4E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:zwgithub\/MJPhotoBrowser.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ADE105B5E71C88C0ABF755C6B17CA1BD822CE0AB"
+    }
+  ]
+}

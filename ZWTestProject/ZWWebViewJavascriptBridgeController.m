@@ -85,7 +85,7 @@
 
 - (void)callHandler:(id)sender {
     //开始调用 JS 代码
-    id data = @{ @"greetingFromObjC": @"Hi there, JS!" };
+    id data = @{ @"greetingDataFromObjC": @"Hi there, JS!" };
     [_bridge callHandler:@"testJavascriptHandler" data:data responseCallback:^(id response) {
         NSLog(@"testJavascriptHandler responded: %@", response);
     }];

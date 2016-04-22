@@ -34,7 +34,7 @@
 #pragma mark- UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSLog(@"shouldStartLoadWithRequest");
+    NSLog(@"shouldStartLoadWithRequest navigationType:%ld",navigationType);
     if ([request.URL.scheme isEqualToString:@"wvjbscheme"]) {
         NSLog(@"scheme:%@   host:%@",request.URL.scheme,request.URL.host);
 //
