@@ -39,7 +39,7 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     self.view = [[UIView alloc] init];
     self.view.frame = [UIScreen mainScreen].bounds;
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)viewDidLoad
