@@ -52,6 +52,7 @@
 		381796D81CCBA761004F060F /* ZWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 381796D71CCBA761004F060F /* ZWPhoto.m */; };
 		381796DB1CCBAAE5004F060F /* ZWPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 381796DA1CCBAAE5004F060F /* ZWPhotoView.m */; };
 		381796E11CCBAD24004F060F /* SDWebImageManager+ZWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 381796E01CCBAD24004F060F /* SDWebImageManager+ZWAdditions.m */; };
+		381796E41CCD2411004F060F /* ZWToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 381796E31CCD2411004F060F /* ZWToolbar.m */; };
 		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
@@ -167,6 +168,8 @@
 		381796DA1CCBAAE5004F060F /* ZWPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWPhotoView.m; sourceTree = "<group>"; };
 		381796DF1CCBAD24004F060F /* SDWebImageManager+ZWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+ZWAdditions.h"; sourceTree = "<group>"; };
 		381796E01CCBAD24004F060F /* SDWebImageManager+ZWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+ZWAdditions.m"; sourceTree = "<group>"; };
+		381796E21CCD2411004F060F /* ZWToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWToolbar.h; sourceTree = "<group>"; };
+		381796E31CCD2411004F060F /* ZWToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWToolbar.m; sourceTree = "<group>"; };
 		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
 		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
 		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
@@ -399,6 +402,8 @@
 				381796DA1CCBAAE5004F060F /* ZWPhotoView.m */,
 				381796DF1CCBAD24004F060F /* SDWebImageManager+ZWAdditions.h */,
 				381796E01CCBAD24004F060F /* SDWebImageManager+ZWAdditions.m */,
+				381796E21CCD2411004F060F /* ZWToolbar.h */,
+				381796E31CCD2411004F060F /* ZWToolbar.m */,
 			);
 			path = ZWPhotoBrowser;
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */,
 				381796C41CCA1652004F060F /* SDImageCache.m in Sources */,
 				380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */,
+				381796E41CCD2411004F060F /* ZWToolbar.m in Sources */,
 				380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
