@@ -34,12 +34,12 @@
 #pragma mark - 生命周期
 - (void)loadView
 {
-    _statusBarHiddenInited = [UIApplication sharedApplication].isStatusBarHidden;
-    // 隐藏状态栏
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-    self.view = [[UIView alloc] init];
-    self.view.frame = [UIScreen mainScreen].bounds;
-    self.view.backgroundColor = [UIColor lightGrayColor];
+//    _statusBarHiddenInited = [UIApplication sharedApplication].isStatusBarHidden;
+//    // 隐藏状态栏
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+//    self.view = [[UIView alloc] init];
+//    self.view.frame = [UIScreen mainScreen].bounds;
+//    self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)viewDidLoad
