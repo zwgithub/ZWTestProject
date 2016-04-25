@@ -14,7 +14,6 @@
 @interface ZWPhotoView () <UIScrollViewDelegate> {
     BOOL _doubleTap;
     UIImageView *_imageView;
-    ZWLoadingView *_photoLoadingView;
 }
 
 @end
@@ -238,7 +237,7 @@
 //    }
     CGFloat minScale = 1;
     
-    CGFloat maxScale = 3.0;
+    CGFloat maxScale = 2;
     
     //	if ([UIScreen instancesRespondToSelector:@selector(scale)]) {
     //		maxScale = maxScale / [[UIScreen mainScreen] scale];

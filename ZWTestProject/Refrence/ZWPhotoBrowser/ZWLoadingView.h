@@ -13,6 +13,7 @@
 @interface ZWLoadingView : UIView
 
 @property (nonatomic) float progress;
+@property (nonatomic, strong) UILabel *failureLabel;
 
 - (void)showLoading;
 - (void)showFailure:(BOOL)show;

@@ -8,6 +8,7 @@
 
 @class ZWPhoto;
 @class ZWPhotoView;
+@class ZWLoadingView;
 
 #import <UIKit/UIKit.h>
 
@@ -23,5 +24,6 @@
 
 @property (nonatomic, strong) ZWPhoto *photo;
 @property (nonatomic, weak) id<ZWPhotoViewDelegate> photoViewDelegate;
+@property (nonatomic, strong) ZWLoadingView *photoLoadingView;
 
 @end

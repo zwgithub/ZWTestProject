@@ -105,13 +105,16 @@
 ////////////////////////////////////////////////
 
 @interface ZWLoadingView () {
-    UILabel *_failureLabel;
     ZWPhotoProgressView *_progressView;
 }
 
 @end
 
 @implementation ZWLoadingView
+
+- (void)dealloc {
+    NSLog(@"ZWLoadingView dealloc");
+}
 
 - (void)setFrame:(CGRect)frame
 {

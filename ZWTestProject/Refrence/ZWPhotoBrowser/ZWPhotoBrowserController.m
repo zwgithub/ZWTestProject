@@ -11,6 +11,7 @@
 #import "ZWPhotoView.h"
 #import "SDWebImageManager+ZWAdditions.h"
 #import "ZWToolbar.h"
+#import "ZWLoadingView.h"
 
 #define kPadding 10
 #define kPhotoViewTagOffset 1000
@@ -191,6 +192,7 @@
     _previousLastIndex = lastIndex;
     
     NSLog(@"firstIndex:%d,lastIndex:%d",firstIndex,lastIndex);
+    
     //回收不再显示的ImageView
     NSInteger photoViewIndex;
     for (ZWPhotoView *photoView in _visiblePhotoViews) {
@@ -235,6 +237,9 @@
         photoView = [[ZWPhotoView alloc] init];
         photoView.photoViewDelegate = self;
     }
+    
+    //防止循环利用出现问题
+    photoView.photoLoadingView.failureLabel.hidden = YES;
     
     // 调整当期页的frame
     CGRect bounds = _photoScrollView.bounds;
