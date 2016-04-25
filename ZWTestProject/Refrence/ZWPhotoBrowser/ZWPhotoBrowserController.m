@@ -27,6 +27,7 @@
     
     NSInteger _previousFirstIndex;
     NSInteger _previousLastIndex;
+    CGFloat _maxOffset;
 }
 
 @property (nonatomic, assign) NSUInteger currentPhotoIndex; //当前显示的第几张
@@ -81,6 +82,8 @@
     _photoScrollView.contentSize = CGSizeMake(frame.size.width * _photos.count, 0);
     [self.view addSubview:_photoScrollView];
     _photoScrollView.contentOffset = CGPointMake(_currentPhotoIndex * frame.size.width, 0);
+    
+    _maxOffset = frame.size.width * _photos.count;
 }
 
 #pragma mark 创建工具栏
@@ -184,7 +187,6 @@
         NSLog(@"滑动的范围还在一页之内");
         return;
     }
-    
     _previousFirstIndex = firstIndex;
     _previousLastIndex = lastIndex;
     
@@ -297,16 +299,19 @@
 
 #pragma mark - UIScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"offset:%@",NSStringFromCGPoint(scrollView.contentOffset));
     if (_photos.count == 1) {
         return;
     }
-    [self showPhotos];
+    
     [self updateTollbarState];
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    NSLog(@"scrollViewDidEndScrollingAnimation");
+    
+    CGFloat offsetX = scrollView.contentOffset.x;
+    
+    //当滑动到最左边或者滑动到最右边的时候，没必要调用showPhotos方法，提高运行效率
+    if (offsetX < 0 || offsetX > _maxOffset) {
+        return;
+    }
+    [self showPhotos];
 }
 
 @end
