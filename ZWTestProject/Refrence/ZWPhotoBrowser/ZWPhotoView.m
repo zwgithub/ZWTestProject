@@ -9,11 +9,12 @@
 #import "ZWPhotoView.h"
 #import "ZWPhoto.h"
 #import "UIImageView+WebCache.h"
+#import "ZWLoadingView.h"
 
 @interface ZWPhotoView () <UIScrollViewDelegate> {
     BOOL _doubleTap;
     UIImageView *_imageView;
-//    MJPhotoLoadingView *_photoLoadingView;
+    ZWLoadingView *_photoLoadingView;
 }
 
 @end
@@ -26,11 +27,10 @@
         self.clipsToBounds = YES;
         // 图片
         _imageView = [[UIImageView alloc] init];
-//        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_imageView];
         
         // 进度条
-//        _photoLoadingView = [[MJPhotoLoadingView alloc] init];
+        _photoLoadingView = [[ZWLoadingView alloc] init];
         
         // 属性
         self.backgroundColor = [UIColor clearColor];
@@ -58,7 +58,9 @@
 //单击隐藏处理
 - (void)handleSingleTap:(UITapGestureRecognizer *)tap {
     _doubleTap = NO;
-    [self performSelector:@selector(hide) withObject:nil afterDelay:0.2];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hide:tap];
+    });
 }
 
 //双击放大处理
@@ -73,53 +75,50 @@
     }
 }
 
-//隐藏图片
-- (void)hide
+#pragma mark - 隐藏图片
+- (void)hide:(UITapGestureRecognizer *)tap
 {
-//    if (_doubleTap) return;
-//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//    
-//    // 移除进度条
-//    [_photoLoadingView removeFromSuperview];
-//    self.contentOffset = CGPointZero;
-//    
-//    // 清空底部的小图
-//    [_photo.srcImageView setHidden:YES];
-//    
-//    CGFloat duration = 0.15;
-//    if (_photo.srcImageView.clipsToBounds) {
-//        [self performSelector:@selector(reset) withObject:nil afterDelay:duration];
-//    }
-//    
-//    // 通知代理
-//    if ([self.photoViewDelegate respondsToSelector:@selector(photoViewSingleTap:)]) {
-//        [self.photoViewDelegate photoViewSingleTap:self];
-//    }
-//    
-//    [UIView animateWithDuration:duration + 0.1 animations:^{
-//        //        _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
-//        
-//        _imageView.frame = CGRectMake(self.width/2, self.height/2, 0, 0);
-//        
-//        //看情况是否打开差状态栏的20
-//        //        if (![[UIApplication sharedApplication] isStatusBarHidden]) {
-//        //            _imageView.top -= 20;
-//        //        }
-//        
-//        // gif图片仅显示第0张
-//        if (_imageView.image.images) {
-//            _imageView.image = _imageView.image.images[0];
-//        }
-//        
-//    } completion:^(BOOL finished) {
-//        // 设置底部的小图片
-//        [_photo.srcImageView setHidden:NO];
-//        
-//        // 通知代理
-//        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
-//            [self.photoViewDelegate photoViewDidEndZoom:self];
-//        }
-//    }];
+    if (_doubleTap) {
+        return;
+    }
+    
+    //[[UIApplication sharedApplication] setStatusBarHidden:NO];
+    // 移除进度条
+    [_photoLoadingView removeFromSuperview];
+    self.contentOffset = CGPointZero;
+    
+    NSLog(@"zoomScale:%f",self.zoomScale);
+    if (1 != self.zoomScale) {
+        CGPoint touchPoint = [tap locationInView:self];
+        if (self.zoomScale == self.maximumZoomScale) {
+            [self setZoomScale:self.minimumZoomScale animated:YES];
+        } else {
+            [self zoomToRect:CGRectMake(touchPoint.x, touchPoint.y, 1, 1) animated:YES];
+        }
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.26 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 通知代理
+        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewSingleTap:)]) {
+            [self.photoViewDelegate photoViewSingleTap:self];
+        }
+        
+        CGFloat duration = 0.15;
+        [UIView animateWithDuration:duration + 0.1 animations:^{
+            _imageView.frame = CGRectMake(self.width/2, self.height/2, 0, 0);
+            
+            // gif图片仅显示第0张
+//            if (_imageView.image.images) {
+//                _imageView.image = _imageView.image.images[0];
+//            }
+            
+        } completion:^(BOOL finished) {
+            // 通知代理
+            if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
+                [self.photoViewDelegate photoViewDidEndZoom:self];
+            }
+        }];
+    });
 }
 
 - (void)setPhoto:(ZWPhoto *)photo {
@@ -139,14 +138,14 @@
         if (![_photo.url.absoluteString hasSuffix:@"gif"]) {
             __weak ZWPhotoView *photoView = self;
             __weak ZWPhoto *photo = _photo;
-//            __weak MJPhotoLoadingView *loading = _photoLoadingView;
-//            [_photoLoadingView showLoading];
-//            [self addSubview:_photoLoadingView];
+            __weak ZWLoadingView *loading = _photoLoadingView;
+            [_photoLoadingView showLoading];
+            [self addSubview:_photoLoadingView];
             
             [_imageView sd_setImageWithURL:_photo.url placeholderImage:_photo.placeholder options:SDWebImageRetryFailed|SDWebImageLowPriority  progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-//                if (receivedSize > kMinProgress) {
-//                    loading.progress = (float)receivedSize/expectedSize;
-//                }
+                if (receivedSize > kMinProgress) {
+                    loading.progress = (float)receivedSize/expectedSize;
+                }
             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 photo.image = image;
                 [photoView adjustFrame];
@@ -173,16 +172,16 @@
     } else {
         self.scrollEnabled = NO;
         // 直接显示进度条
-//        [_photoLoadingView showLoading];
-//        [self addSubview:_photoLoadingView];
+        [_photoLoadingView showLoading];
+        [self addSubview:_photoLoadingView];
         
         __weak ZWPhotoView *photoView = self;
-//        __weak MJPhotoLoadingView *loading = _photoLoadingView;
+        __weak ZWLoadingView *loading = _photoLoadingView;
         
         [_imageView sd_setImageWithURL:_photo.url placeholderImage:_photo.placeholder options:SDWebImageRetryFailed|SDWebImageLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-//            if (receivedSize > kMinProgress) {
-//                loading.progress = (float)receivedSize/expectedSize;
-//            }
+            if (receivedSize > kMinProgress) {
+                loading.progress = (float)receivedSize/expectedSize;
+            }
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             [photoView photoDidFinishLoadWithImage:image];
         }];
@@ -195,18 +194,18 @@
     if (image) {
         self.scrollEnabled = YES;
         _photo.image = image;
-//        [_photoLoadingView removeFromSuperview];
+        [_photoLoadingView removeFromSuperview];
         
-//        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewImageFinishLoad:)]) {
-//            [self.photoViewDelegate photoViewImageFinishLoad:self];
-//        }
+        if ([self.photoViewDelegate respondsToSelector:@selector(photoViewImageFinishLoad:)]) {
+            [self.photoViewDelegate photoViewImageFinishLoad:self];
+        }
     } else {
-//        [self addSubview:_photoLoadingView];
+        [self addSubview:_photoLoadingView];
         BOOL isShowFailure=YES;
         if([[_photo.url absoluteString] isEqualToString:@""]){
             isShowFailure=NO;
         }
-//        [_photoLoadingView showFailure:isShowFailure];
+        [_photoLoadingView showFailure:isShowFailure];
     }
     
     // 设置缩放比例
@@ -229,17 +228,17 @@
     CGFloat imageWidth = imageSize.width;
     CGFloat imageHeight = imageSize.height;
     
-    // 设置伸缩比例
-    CGFloat widthRatio = boundsWidth/imageWidth;
-    CGFloat heightRatio = boundsHeight/imageHeight;
-    CGFloat minScale = (widthRatio > heightRatio) ? heightRatio : widthRatio;
+//    // 设置伸缩比例
+//    CGFloat widthRatio = boundsWidth/imageWidth;
+//    CGFloat heightRatio = boundsHeight/imageHeight;
+//    CGFloat minScale = (widthRatio > heightRatio) ? heightRatio : widthRatio;
+//    
+//    if (minScale >= 1) {
+//        minScale = 0.8f;
+//    }
+    CGFloat minScale = 1;
     
-    if (minScale >= 1) {
-        minScale = 0.8f;
-    }
-    minScale = 1;
-    
-    CGFloat maxScale = 2.0;
+    CGFloat maxScale = 3.0;
     
     //	if ([UIScreen instancesRespondToSelector:@selector(scale)]) {
     //		maxScale = maxScale / [[UIScreen mainScreen] scale];

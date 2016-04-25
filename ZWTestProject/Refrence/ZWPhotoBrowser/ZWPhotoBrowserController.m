@@ -10,18 +10,23 @@
 #import "ZWPhoto.h"
 #import "ZWPhotoView.h"
 #import "SDWebImageManager+ZWAdditions.h"
+#import "ZWToolbar.h"
 
 #define kPadding 10
 #define kPhotoViewTagOffset 1000
 #define kPhotoViewIndex(photoView) ([photoView tag] - kPhotoViewTagOffset)
 
-@interface ZWPhotoBrowserController () <UIScrollViewDelegate>
+@interface ZWPhotoBrowserController () <UIScrollViewDelegate,ZWPhotoViewDelegate>
 {
     UIScrollView *_photoScrollView; //展示图片的scrollview
+    ZWToolbar * _toolbar;  //工具栏
     
     NSMutableSet *_visiblePhotoViews;   //所有的图片view
     NSMutableSet *_reusablePhotoViews;  //重利用
     BOOL _statusBarHiddenInited;    //一开始的状态栏
+    
+    NSInteger _previousFirstIndex;
+    NSInteger _previousLastIndex;
 }
 
 @property (nonatomic, assign) NSUInteger currentPhotoIndex; //当前显示的第几张
@@ -36,10 +41,13 @@
 {
     _statusBarHiddenInited = [UIApplication sharedApplication].isStatusBarHidden;
     // 隐藏状态栏
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    //[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     self.view = [[UIView alloc] init];
     self.view.frame = [UIScreen mainScreen].bounds;
     self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    _previousFirstIndex = -1;
+    _previousLastIndex = -1;
 }
 
 - (void)viewDidLoad
@@ -78,18 +86,16 @@
 #pragma mark 创建工具栏
 - (void)createToolbar
 {
-//    CGFloat barHeight = 44;
-//    
-//    //    CGFloat barHeight = 0;
-//    CGFloat barY = self.view.frame.size.height - barHeight;
-//    _toolbar = [[MJPhotoToolbar alloc] init];
-//    _toolbar.Delegate = self;
-//    _toolbar.frame = CGRectMake((self.view.frame.size.width - 60) / 2, barY, 60, barHeight);
-//    _toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-//    _toolbar.photos = _photos;
-//    [self.view addSubview:_toolbar];
-//    
-//    [self updateTollbarState];
+    CGFloat barHeight = 24;
+    CGFloat barWidth = 80;
+    CGFloat barY = self.view.frame.size.height - barHeight;
+    _toolbar = [[ZWToolbar alloc] init];
+    _toolbar.frame = CGRectMake((self.view.frame.size.width - barWidth) / 2, barY - 20, barWidth, barHeight);
+    _toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    _toolbar.photoTotalCount = _photos.count;
+    [self.view addSubview:_toolbar];
+    
+    [self updateTollbarState];
 }
 
 #pragma mark - 提供给外部调用的接口
@@ -142,7 +148,7 @@
         [self showPhotos];
     }
     
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    //[[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 #pragma mark 显示照片
@@ -155,7 +161,6 @@
     }
     
     CGRect visibleBounds = _photoScrollView.bounds;
-    NSLog(@"visibleBounds:%@",NSStringFromCGRect(visibleBounds));
     NSInteger firstIndex = (int)floorf((CGRectGetMinX(visibleBounds)+kPadding*2) / CGRectGetWidth(visibleBounds));
     NSInteger lastIndex  = (int)floorf((CGRectGetMaxX(visibleBounds)-kPadding*2-1) / CGRectGetWidth(visibleBounds));
     
@@ -175,7 +180,15 @@
         lastIndex = _photos.count - 1;
     }
     
+    if (_previousFirstIndex == firstIndex && _previousLastIndex == lastIndex) {
+        NSLog(@"滑动的范围还在一页之内");
+        return;
+    }
     
+    _previousFirstIndex = firstIndex;
+    _previousLastIndex = lastIndex;
+    
+    NSLog(@"firstIndex:%d,lastIndex:%d",firstIndex,lastIndex);
     //回收不再显示的ImageView
     NSInteger photoViewIndex;
     for (ZWPhotoView *photoView in _visiblePhotoViews) {
@@ -218,7 +231,7 @@
     ZWPhotoView *photoView = [self dequeueReusablePhotoView];
     if (!photoView) { // 添加新的图片view
         photoView = [[ZWPhotoView alloc] init];
-//        photoView.photoViewDelegate = self;
+        photoView.photoViewDelegate = self;
     }
     
     // 调整当期页的frame
@@ -246,7 +259,7 @@
             return YES;
         }
     }
-    return  NO;
+    return NO;
 }
 
 #pragma mark 循环利用某个view
@@ -259,20 +272,41 @@
     return photoView;
 }
 
+#pragma mark ZWPhotoViewDelegate
+- (void)photoViewImageFinishLoad:(ZWPhotoView *)photoView {
+    _toolbar.currentPhotoIndex = _currentPhotoIndex;
+}
+- (void)photoViewSingleTap:(ZWPhotoView *)photoView {
+    [UIApplication sharedApplication].statusBarHidden = _statusBarHiddenInited;
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    // 移除工具条
+    [_toolbar removeFromSuperview];
+}
+- (void)photoViewDidEndZoom:(ZWPhotoView *)photoView {
+    [self.view removeFromSuperview];
+    [self removeFromParentViewController];
+}
+
 #pragma mark 更新toolbar状态
 - (void)updateTollbarState
 {
-//    _currentPhotoIndex = _photoScrollView.contentOffset.x / _photoScrollView.frame.size.width;
-//    _toolbar.currentPhotoIndex = _currentPhotoIndex;
+    _currentPhotoIndex = _photoScrollView.contentOffset.x / _photoScrollView.frame.size.width;
+    _toolbar.currentPhotoIndex = _currentPhotoIndex;
 }
 
 #pragma mark - UIScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    NSLog(@"offset:%@",NSStringFromCGPoint(scrollView.contentOffset));
     if (_photos.count == 1) {
         return;
     }
     [self showPhotos];
     [self updateTollbarState];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    NSLog(@"scrollViewDidEndScrollingAnimation");
 }
 
 @end

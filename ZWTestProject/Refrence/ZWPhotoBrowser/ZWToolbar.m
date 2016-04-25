@@ -8,14 +8,37 @@
 
 #import "ZWToolbar.h"
 
+@interface ZWToolbar () {
+    UILabel *_indexLabel;
+}
+
+@end
+
 @implementation ZWToolbar
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _indexLabel = [[UILabel alloc] init];
+        _indexLabel.font = [UIFont boldSystemFontOfSize:17];
+        _indexLabel.frame = self.bounds;
+        _indexLabel.layer.cornerRadius = 10;
+        _indexLabel.layer.masksToBounds = YES;
+        _indexLabel.backgroundColor = [UIColor grayColor];
+        _indexLabel.textColor = [UIColor whiteColor];
+        _indexLabel.textAlignment = NSTextAlignmentCenter;
+        _indexLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        [self addSubview:_indexLabel];
+    }
+    return self;
 }
-*/
+
+- (void)setCurrentPhotoIndex:(NSUInteger)currentPhotoIndex
+{
+    _currentPhotoIndex = currentPhotoIndex;
+    //更新页码
+    _indexLabel.text = [NSString stringWithFormat:@"  %d / %d  ", _currentPhotoIndex + 1, _photoTotalCount];
+}
 
 @end

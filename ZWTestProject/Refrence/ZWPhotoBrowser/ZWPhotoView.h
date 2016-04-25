@@ -7,11 +7,21 @@
 //
 
 @class ZWPhoto;
+@class ZWPhotoView;
 
 #import <UIKit/UIKit.h>
+
+@protocol ZWPhotoViewDelegate <NSObject>
+
+- (void)photoViewImageFinishLoad:(ZWPhotoView *)photoView;
+- (void)photoViewSingleTap:(ZWPhotoView *)photoView;
+- (void)photoViewDidEndZoom:(ZWPhotoView *)photoView;
+
+@end
 
 @interface ZWPhotoView : UIScrollView
 
 @property (nonatomic, strong) ZWPhoto *photo;
+@property (nonatomic, weak) id<ZWPhotoViewDelegate> photoViewDelegate;
 
 @end

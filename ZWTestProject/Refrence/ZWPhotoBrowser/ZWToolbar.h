@@ -10,4 +10,7 @@
 
 @interface ZWToolbar : UIView
 
+@property (nonatomic, assign) NSUInteger currentPhotoIndex; //当前展示的图片索引
+@property (nonatomic, assign) NSUInteger photoTotalCount;   //图片的总数
+
 @end
