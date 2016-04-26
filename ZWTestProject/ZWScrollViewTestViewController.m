@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 20, self.view.width - 40, self.view.height - 64 - 40)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64)];
     _scrollView.backgroundColor = [UIColor orangeColor];
     _scrollView.delegate = self;
     _scrollView.zoomScale = 1;
@@ -50,9 +50,13 @@
     _imageView.image = image;
     [_scrollView addSubview:_imageView];
     
+//    [_imageView setCenter:CGPointMake(_scrollView.center.x, _scrollView.center.y)];
+    
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     doubleTap.numberOfTapsRequired = 2;
     [_scrollView addGestureRecognizer:doubleTap];
+    
+    NSLog(@"S:%@ I:%@",NSStringFromCGPoint(CGPointMake(_scrollView.center.x, _scrollView.center.y)),NSStringFromCGPoint(CGPointMake(_imageView.center.x, _imageView.center.y)));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,28 +83,26 @@
 // 让UIImageView在UIScrollView缩放后居中显示
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
+//    NSLog(@"%f",scrollView.zoomScale);
     
-//    CGFloat offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width) ?
-//    (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
-//    
-//    CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height) ?
-//    (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
-//    
-//    NSLog(@"bouns width:%f,contentSize width:%f",scrollView.bounds.size.width,scrollView.contentSize.width);
-//    NSLog(@"bouns height:%f,contentSize height:%f",scrollView.bounds.size.height,scrollView.contentSize.height);
-//    NSLog(@"x:%f,y:%f",offsetX,offsetY);
-//    
-//    _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
-//                                    scrollView.contentSize.height * 0.5 + offsetY);
+//    if (scrollView.zoomScale == scrollView.minimumZoomScale) {
+//        _imageView.frame = _imageFrame;
+//    } else {
+//        _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5,
+//                                        scrollView.contentSize.height * 0.5);
+//    }
     
-    NSLog(@"%f",scrollView.zoomScale);
+//    _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5,
+//                                    scrollView.contentSize.height * 0.5);
     
-    if (scrollView.zoomScale == scrollView.minimumZoomScale) {
-        _imageView.frame = _imageFrame;
-    } else {
-        _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5,
-                                        scrollView.contentSize.height * 0.5);
-    }
+    CGFloat xcenter = scrollView.center.x;
+    CGFloat ycenter = scrollView.center.y;
+    
+    NSLog(@"qian:%@",NSStringFromCGPoint(CGPointMake(xcenter, ycenter)));
+    xcenter = scrollView.contentSize.width > scrollView.frame.size.width ? scrollView.contentSize.width/2 : xcenter;
+    ycenter = scrollView.contentSize.height > scrollView.frame.size.height ? scrollView.contentSize.height/2 : ycenter;
+    [_imageView setCenter:CGPointMake(xcenter, ycenter)];
+    NSLog(@"hou:%@",NSStringFromCGPoint(CGPointMake(xcenter, ycenter)));
 }
 
 
