@@ -10,6 +10,6 @@
 
 @interface ZWPhotoBrowserController : UIViewController
 
-+ (void)showImageUrls:(NSArray *)urlStrArray showIndex:(NSInteger)index;
++ (void)showImageUrls:(NSArray *)urlStrArray showIndex:(NSInteger)index placeholder:(UIImage *)placeholder;
 
 @end

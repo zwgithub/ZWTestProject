@@ -112,7 +112,8 @@
 
 @implementation ZWLoadingView
 
-- (void)dealloc {
+- (void)dealloc
+{
     NSLog(@"ZWLoadingView dealloc");
 }
 

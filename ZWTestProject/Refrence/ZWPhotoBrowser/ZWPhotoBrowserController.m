@@ -24,15 +24,14 @@
     
     NSMutableSet *_visiblePhotoViews;   //所有的图片view
     NSMutableSet *_reusablePhotoViews;  //重利用
-    BOOL _statusBarHiddenInited;    //一开始的状态栏
     
     NSInteger _previousFirstIndex;
     NSInteger _previousLastIndex;
-    CGFloat _maxOffset;
+    CGFloat _maxOffset; //最大偏移量
 }
 
 @property (nonatomic, assign) NSUInteger currentPhotoIndex; //当前显示的第几张
-@property (nonatomic, strong) NSMutableArray * photos;  //所有的图片对象
+@property (nonatomic, strong) NSMutableArray *photos;  //所有的图片对象
 
 @end
 
@@ -41,9 +40,6 @@
 #pragma mark - 生命周期
 - (void)loadView
 {
-    _statusBarHiddenInited = [UIApplication sharedApplication].isStatusBarHidden;
-    // 隐藏状态栏
-    //[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     self.view = [[UIView alloc] init];
     self.view.frame = [UIScreen mainScreen].bounds;
     self.view.backgroundColor = [UIColor lightGrayColor];
@@ -63,7 +59,8 @@
     [self createToolbar];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
@@ -103,7 +100,8 @@
 }
 
 #pragma mark - 提供给外部调用的接口
-+ (void)showImageUrls:(NSArray *)urlStrArray showIndex:(NSInteger)index {
++ (void)showImageUrls:(NSArray *)urlStrArray showIndex:(NSInteger)index placeholder:(UIImage *)placeholder
+{
     if (0 == urlStrArray.count) {
         return;
     }
@@ -112,6 +110,7 @@
     for (int i = 0; i < urlStrArray.count; i++) {
         NSString *urlStr = urlStrArray[i];
         ZWPhoto *photo = [[ZWPhoto alloc] init];
+        photo.placeholder = placeholder;
         photo.url = [NSURL URLWithString:urlStr];
         [photos addObject:photo];
     }
@@ -123,7 +122,8 @@
     return;
 }
 
-- (void)setPhotos:(NSMutableArray *)photos showIndex:(NSInteger)index {
+- (void)setPhotos:(NSMutableArray *)photos showIndex:(NSInteger)index
+{
     if (!_photos) {
         _photos = [NSMutableArray new];
     }
@@ -151,8 +151,6 @@
     if (_currentPhotoIndex == 0) {
         [self showPhotos];
     }
-    
-    //[[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 #pragma mark 显示照片
@@ -184,14 +182,12 @@
         lastIndex = _photos.count - 1;
     }
     
+    //如果 firstIndex 和 lastIndex 上次的一样，直接返回，提高执行效率
     if (_previousFirstIndex == firstIndex && _previousLastIndex == lastIndex) {
-//        NSLog(@"滑动的范围还在一页之内");
         return;
     }
     _previousFirstIndex = firstIndex;
     _previousLastIndex = lastIndex;
-    
-//    NSLog(@"firstIndex:%d,lastIndex:%d",firstIndex,lastIndex);
     
     //回收不再显示的ImageView
     NSInteger photoViewIndex;
@@ -233,7 +229,7 @@
 - (void)showPhotoViewAtIndex:(NSInteger)index
 {
     ZWPhotoView *photoView = [self dequeueReusablePhotoView];
-    if (!photoView) { // 添加新的图片view
+    if (!photoView) {   //添加新的图片view
         photoView = [[ZWPhotoView alloc] init];
         photoView.photoViewDelegate = self;
     }
@@ -260,7 +256,8 @@
 }
 
 #pragma mark index这页是否正在显示
-- (BOOL)isShowingPhotoViewAtIndex:(NSUInteger)index {
+- (BOOL)isShowingPhotoViewAtIndex:(NSUInteger)index
+{
     for (ZWPhotoView *photoView in _visiblePhotoViews) {
         if (kPhotoViewIndex(photoView) == index) {
             return YES;
@@ -280,17 +277,19 @@
 }
 
 #pragma mark ZWPhotoViewDelegate
-- (void)photoViewImageFinishLoad:(ZWPhotoView *)photoView {
+- (void)photoViewImageFinishLoad:(ZWPhotoView *)photoView
+{
     _toolbar.currentPhotoIndex = _currentPhotoIndex;
 }
-- (void)photoViewSingleTap:(ZWPhotoView *)photoView {
-    [UIApplication sharedApplication].statusBarHidden = _statusBarHiddenInited;
+- (void)photoViewSingleTap:(ZWPhotoView *)photoView
+{
     self.view.backgroundColor = [UIColor clearColor];
     
     // 移除工具条
     [_toolbar removeFromSuperview];
 }
-- (void)photoViewDidEndZoom:(ZWPhotoView *)photoView {
+- (void)photoViewDidEndZoom:(ZWPhotoView *)photoView
+{
     [self.view removeFromSuperview];
     [self removeFromParentViewController];
 }
@@ -303,7 +302,8 @@
 }
 
 #pragma mark - UIScrollView Delegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
     if (_photos.count == 1) {
         return;
     }

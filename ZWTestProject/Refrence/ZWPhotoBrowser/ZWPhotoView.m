@@ -55,7 +55,8 @@
 
 #pragma mark - 手势处理
 //单击隐藏处理
-- (void)handleSingleTap:(UITapGestureRecognizer *)tap {
+- (void)handleSingleTap:(UITapGestureRecognizer *)tap
+{
     _doubleTap = NO;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self hide:tap];
@@ -63,7 +64,8 @@
 }
 
 //双击放大处理
-- (void)handleDoubleTap:(UITapGestureRecognizer *)tap {
+- (void)handleDoubleTap:(UITapGestureRecognizer *)tap
+{
     _doubleTap = YES;
     
     CGPoint touchPoint = [tap locationInView:_imageView];
@@ -112,7 +114,8 @@
     });
 }
 
-- (void)setPhoto:(ZWPhoto *)photo {
+- (void)setPhoto:(ZWPhoto *)photo
+{
     _photo = photo;
     [self showImage];
 }
@@ -198,7 +201,7 @@
         [_photoLoadingView showFailure:isShowFailure];
     }
     
-    // 设置缩放比例
+    //调整缩放比例
     [self adjustFrame];
 }
 
@@ -208,7 +211,6 @@
     if (_imageView.image == nil) {
         return;
     }
-    
     // 基本尺寸参数
     CGSize boundsSize = self.bounds.size;
     CGFloat boundsWidth = boundsSize.width;
@@ -223,19 +225,7 @@
     self.zoomScale = minScale;
     self.maximumZoomScale = maxScale;
     self.minimumZoomScale = minScale;
-    
-//    if ([self isScrollEnabled]) {
-//        self.maximumZoomScale = maxScale;
-//        self.minimumZoomScale = minScale;
-//        self.zoomScale = minScale;
-//        self.bouncesZoom = YES;
-//    } else {
-//        self.maximumZoomScale = minScale;
-//        self.minimumZoomScale = minScale;
-//        self.zoomScale = minScale;
-//        self.bouncesZoom = NO;
-//    }
-    
+
     _imageFrame = CGRectMake(0, 0, boundsWidth, imageHeight * boundsWidth / imageWidth);
     self.contentSize = CGSizeMake(0, _imageFrame.size.height);
     
@@ -265,23 +255,6 @@
 // 让UIImageView在UIScrollView缩放后居中显示
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-//    NSLog(@"bounds:%@",NSStringFromCGRect(scrollView.bounds));
-//    NSLog(@"contentSize:%@",NSStringFromCGSize(scrollView.contentSize));
-//    NSLog(@"imageview:%@",NSStringFromCGRect(_imageView.frame));
-//    NSLog(@"center:%@",NSStringFromCGPoint(_imageView.center));
-//    
-//    CGFloat offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width) ?
-//    (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
-//    
-//    CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height) ?
-//    (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
-//    
-//    _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
-//                                    scrollView.contentSize.height * 0.5 + offsetY);
-//    NSLog(@"offsetX:%f,offsetY:%f",offsetX,offsetY);
-//    NSLog(@"修改后center:%@",NSStringFromCGPoint(_imageView.center));
-//    NSLog(@"\n");
-    
     if (scrollView.zoomScale == scrollView.minimumZoomScale) {
         _imageView.frame = _imageFrame;
     } else {
