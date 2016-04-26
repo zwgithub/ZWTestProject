@@ -33,7 +33,7 @@
 }
 
 - (void)rightItemButtonAction {
-    NSArray *url = @[@"http://ww4.sinaimg.cn/bmiddle/7f8c1087gw1e9g06pc68ug20ag05y4qq.gif", @"https://raw.githubusercontent.com/zwgithub/blog_pic/master/animal_city1.jpg",@"https://raw.githubusercontent.com/zwgithub/blog_pic/master/animal_city2.jpg",@"https://raw.githubusercontent.com/zwgithub/blog_pic/master/animal_city3.jpg",
+    NSArray *url = @[@"http://ww4.sinaimg.cn/bmiddle/7f8c1087gw1e9g06pc68ug20ag05y4qq.gif", @"https://raw.githubusercontent.com/zwgithub/blog_pic/master/animal_city1.jpg",@"https://raw.githubusercontent.com/zwgithub/blog_pic/master/animal_city2.jpg",@"https://raw.githubusercontent.com/zwgithub/blog_pic/master/animal_city3.jpg",@"https://raw.githubusercontent.com/zwgithub/blog_pic/master/animal_city4.jpg",
                      @"https://fdsa/master/animal_city56.jpg",
                      ];
     [ZWPhotoBrowserController showImageUrls:url showIndex:0];

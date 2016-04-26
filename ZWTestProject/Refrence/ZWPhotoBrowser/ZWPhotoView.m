@@ -14,6 +14,7 @@
 @interface ZWPhotoView () <UIScrollViewDelegate> {
     BOOL _doubleTap;
     UIImageView *_imageView;
+    CGRect _imageFrame;
 }
 
 @end
@@ -34,7 +35,6 @@
         // 属性
         self.backgroundColor = [UIColor clearColor];
         self.delegate = self;
-        
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         self.decelerationRate = UIScrollViewDecelerationRateFast;
@@ -66,7 +66,7 @@
 - (void)handleDoubleTap:(UITapGestureRecognizer *)tap {
     _doubleTap = YES;
     
-    CGPoint touchPoint = [tap locationInView:self];
+    CGPoint touchPoint = [tap locationInView:_imageView];
     if (self.zoomScale == self.maximumZoomScale) {
         [self setZoomScale:self.minimumZoomScale animated:YES];
     } else {
@@ -97,7 +97,6 @@
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.26 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 通知代理
         if ([self.photoViewDelegate respondsToSelector:@selector(photoViewSingleTap:)]) {
             [self.photoViewDelegate photoViewSingleTap:self];
         }
@@ -105,14 +104,7 @@
         CGFloat duration = 0.15;
         [UIView animateWithDuration:duration + 0.1 animations:^{
             _imageView.frame = CGRectMake(self.width/2, self.height/2, 0, 0);
-            
-            // gif图片仅显示第0张
-//            if (_imageView.image.images) {
-//                _imageView.image = _imageView.image.images[0];
-//            }
-            
         } completion:^(BOOL finished) {
-            // 通知代理
             if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
                 [self.photoViewDelegate photoViewDidEndZoom:self];
             }
@@ -122,7 +114,6 @@
 
 - (void)setPhoto:(ZWPhoto *)photo {
     _photo = photo;
-    
     [self showImage];
 }
 
@@ -227,103 +218,76 @@
     CGFloat imageWidth = imageSize.width;
     CGFloat imageHeight = imageSize.height;
     
-//    // 设置伸缩比例
-//    CGFloat widthRatio = boundsWidth/imageWidth;
-//    CGFloat heightRatio = boundsHeight/imageHeight;
-//    CGFloat minScale = (widthRatio > heightRatio) ? heightRatio : widthRatio;
-//    
-//    if (minScale >= 1) {
-//        minScale = 0.8f;
-//    }
     CGFloat minScale = 1;
+    CGFloat maxScale = 3;
+    self.zoomScale = minScale;
+    self.maximumZoomScale = maxScale;
+    self.minimumZoomScale = minScale;
     
-    CGFloat maxScale = 2;
+//    if ([self isScrollEnabled]) {
+//        self.maximumZoomScale = maxScale;
+//        self.minimumZoomScale = minScale;
+//        self.zoomScale = minScale;
+//        self.bouncesZoom = YES;
+//    } else {
+//        self.maximumZoomScale = minScale;
+//        self.minimumZoomScale = minScale;
+//        self.zoomScale = minScale;
+//        self.bouncesZoom = NO;
+//    }
     
-    //	if ([UIScreen instancesRespondToSelector:@selector(scale)]) {
-    //		maxScale = maxScale / [[UIScreen mainScreen] scale];
-    //	}
-    if ([self isScrollEnabled]) {
-        self.maximumZoomScale = maxScale;
-        self.minimumZoomScale = minScale;
-        self.zoomScale = minScale;
-        self.bouncesZoom = YES;
-    } else {
-        self.maximumZoomScale = minScale;
-        self.minimumZoomScale = minScale;
-        self.zoomScale = minScale;
-        self.bouncesZoom = NO;
-    }
+    _imageFrame = CGRectMake(0, 0, boundsWidth, imageHeight * boundsWidth / imageWidth);
+    self.contentSize = CGSizeMake(0, _imageFrame.size.height);
     
+    _imageFrame.origin.x = floorf( (boundsWidth - _imageFrame.size.width ) / 2.0);
+    _imageFrame.origin.y = floorf( (boundsHeight - _imageFrame.size.height ) / 2.0);
     
-    CGRect imageFrame = CGRectMake(0, 0, boundsWidth, imageHeight * boundsWidth / imageWidth);
-    // 内容尺寸
-    self.contentSize = CGSizeMake(0, imageFrame.size.height);
-    
-    // 宽大
-    //    if ( imageWidth <= imageHeight &&  imageHeight <  boundsHeight ) {
-    //        imageFrame.origin.x = floorf( (boundsWidth - imageFrame.size.width ) / 2.0) * minScale;
-    //        imageFrame.origin.y = floorf( (boundsHeight - imageFrame.size.height ) / 2.0) * minScale;
-    //    } else {
-    //        imageFrame.origin.x = floorf( (boundsWidth - imageFrame.size.width ) / 2.0);
-    //        imageFrame.origin.y = floorf( (boundsHeight - imageFrame.size.height ) / 2.0);
-    //    }
-    
-    imageFrame.origin.x = floorf( (boundsWidth - imageFrame.size.width ) / 2.0);
-    imageFrame.origin.y = floorf( (boundsHeight - imageFrame.size.height ) / 2.0);
-    
-    
-    
-    //    // y值
-    //    if (imageFrame.size.height < boundsHeight) {
-    //
-    //        imageFrame.origin.y = floorf( (boundsHeight - imageFrame.size.height ) / 2.0) * minScale;
-    //
-    ////        imageFrame.origin.y = floorf( (boundsHeight - imageFrame.size.height ) / 2.0) * minScale;
-    //
-    //	} else {
-    //        imageFrame.origin.y = 0;
-    //	}
-    
-    if (_photo.firstShow) { // 第一次显示的图片
-        _photo.firstShow = NO; // 已经显示过了
+    if (_photo.firstShow) { //第一次显示的图片
+        _photo.firstShow = NO;  //已经显示过了
         
-        //        _imageView.frame = [_photo.srcImageView convertRect:_photo.srcImageView.bounds toView:nil];
-        _imageView.frame = CGRectMake(self.width/2, self.height/2, 0, 0);
+        _imageView.frame = CGRectMake(self.width / 2, self.height / 2, 0, 0);
         [UIView animateWithDuration:0.3  animations:^{
-            
-            _imageView.frame = imageFrame;
+            _imageView.frame = _imageFrame;
         } completion:^(BOOL finished) {
-            // 设置底部的小图片
-//            _photo.srcImageView.image = _photo.placeholder;
             [self photoStartLoad];
         }];
     } else {
-        _imageView.frame = imageFrame;
+        _imageView.frame = _imageFrame;
     }
 }
 
 #pragma mark - UIScrollViewDelegate
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
     return _imageView;
 }
 
 // 让UIImageView在UIScrollView缩放后居中显示
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    NSLog(@"bounds:%@",NSStringFromCGRect(scrollView.bounds));
-    NSLog(@"contentSize:%@",NSStringFromCGSize(scrollView.contentSize));
-    NSLog(@"imageview:%@",NSStringFromCGSize(_imageView.frame.size));
-    NSLog(@"center:%@",NSStringFromCGPoint(_imageView.center));
+//    NSLog(@"bounds:%@",NSStringFromCGRect(scrollView.bounds));
+//    NSLog(@"contentSize:%@",NSStringFromCGSize(scrollView.contentSize));
+//    NSLog(@"imageview:%@",NSStringFromCGRect(_imageView.frame));
+//    NSLog(@"center:%@",NSStringFromCGPoint(_imageView.center));
+//    
+//    CGFloat offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width) ?
+//    (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
+//    
+//    CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height) ?
+//    (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
+//    
+//    _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
+//                                    scrollView.contentSize.height * 0.5 + offsetY);
+//    NSLog(@"offsetX:%f,offsetY:%f",offsetX,offsetY);
+//    NSLog(@"修改后center:%@",NSStringFromCGPoint(_imageView.center));
+//    NSLog(@"\n");
     
-    CGFloat offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width)?
-    (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
-    
-    CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)?
-    (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
-    
-    _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
-                                    scrollView.contentSize.height * 0.5 + offsetY);
-    NSLog(@"修改后center:%@",NSStringFromCGPoint(_imageView.center));
+    if (scrollView.zoomScale == scrollView.minimumZoomScale) {
+        _imageView.frame = _imageFrame;
+    } else {
+        _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5,
+                                        scrollView.contentSize.height * 0.5);
+    }
 }
 
 @end

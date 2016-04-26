@@ -20,6 +20,16 @@
     self.title = self.navTitleStr;
     self.view.backgroundColor = [UIColor lightGrayColor];
     
+    if (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice] systemVersion] floatValue]<8.0) ||
+        [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [self.navigationController setNavigationBarHidden:NO];
+        self.extendedLayoutIncludesOpaqueBars = YES;
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.navigationController.navigationBar.translucent = NO;
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
 //    Method method1 = class_getInstanceMethod([UIViewController class], @selector(viewDidLoad));
 //    Method method2 = class_getInstanceMethod([UIViewController class], @selector(my_viewDidLoad));
 //    method_exchangeImplementations(method1, method2);

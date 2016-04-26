@@ -185,13 +185,13 @@
     }
     
     if (_previousFirstIndex == firstIndex && _previousLastIndex == lastIndex) {
-        NSLog(@"滑动的范围还在一页之内");
+//        NSLog(@"滑动的范围还在一页之内");
         return;
     }
     _previousFirstIndex = firstIndex;
     _previousLastIndex = lastIndex;
     
-    NSLog(@"firstIndex:%d,lastIndex:%d",firstIndex,lastIndex);
+//    NSLog(@"firstIndex:%d,lastIndex:%d",firstIndex,lastIndex);
     
     //回收不再显示的ImageView
     NSInteger photoViewIndex;
