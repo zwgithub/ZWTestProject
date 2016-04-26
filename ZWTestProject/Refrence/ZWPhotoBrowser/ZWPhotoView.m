@@ -253,8 +253,6 @@
 //让UIImageView在UIScrollView缩放后居中显示
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    NSLog(@"zoomScale:%f",scrollView.zoomScale);
-    NSLog(@"tracking:%d,dragging:%d",scrollView.tracking,scrollView.dragging);
     if (scrollView.zoomScale == scrollView.maximumZoomScale) {
         _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5,
                                         scrollView.contentSize.height * 0.5);
@@ -268,11 +266,5 @@
         [_imageView setCenter:CGPointMake(xcenter, ycenter)];
     }
 }
-
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-//    NSLog(@"scrollViewDidEndDragging");
-//    _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5,
-//                                    scrollView.contentSize.height * 0.5);
-//}
 
 @end
