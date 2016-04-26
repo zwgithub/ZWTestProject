@@ -25,14 +25,14 @@
 {
     if ((self = [super initWithFrame:frame])) {
         self.clipsToBounds = YES;
-        // 图片
+        //图片
         _imageView = [[UIImageView alloc] init];
         [self addSubview:_imageView];
         
-        // 进度条
+        //进度条
         _photoLoadingView = [[ZWLoadingView alloc] init];
         
-        // 属性
+        //属性
         self.backgroundColor = [UIColor clearColor];
         self.delegate = self;
         self.showsHorizontalScrollIndicator = NO;
@@ -40,7 +40,7 @@
         self.decelerationRate = UIScrollViewDecelerationRateFast;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        // 监听点击
+        //监听点击
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
         singleTap.delaysTouchesBegan = YES;
         singleTap.numberOfTapsRequired = 1;
@@ -83,12 +83,10 @@
         return;
     }
     
-    //[[UIApplication sharedApplication] setStatusBarHidden:NO];
-    // 移除进度条
+    //移除进度条
     [_photoLoadingView removeFromSuperview];
     self.contentOffset = CGPointZero;
     
-    NSLog(@"zoomScale:%f",self.zoomScale);
     if (1 != self.zoomScale) {
         CGPoint touchPoint = [tap locationInView:self];
         if (self.zoomScale == self.maximumZoomScale) {
@@ -123,11 +121,11 @@
 #pragma mark 显示图片
 - (void)showImage
 {
-    if (_photo.firstShow) { // 首次显示
+    if (_photo.firstShow) { //首次显示
         
-        _imageView.image = _photo.placeholder; // 占位图片
+        _imageView.image = _photo.placeholder; //占位图片
         
-        // 不是gif，就马上开始下载
+        //不是gif，就马上开始下载
         if (![_photo.url.absoluteString hasSuffix:@"gif"]) {
             __weak ZWPhotoView *photoView = self;
             __weak ZWPhoto *photo = _photo;
@@ -152,7 +150,7 @@
     } else {
         [self photoStartLoad];
     }
-    // 调整frame参数
+    //调整frame参数
     [self adjustFrame];
 }
 
@@ -164,7 +162,7 @@
         _imageView.image = _photo.image;
     } else {
         self.scrollEnabled = NO;
-        // 直接显示进度条
+        //直接显示进度条
         [_photoLoadingView showLoading];
         [self addSubview:_photoLoadingView];
         
@@ -252,7 +250,7 @@
     return _imageView;
 }
 
-// 让UIImageView在UIScrollView缩放后居中显示
+//让UIImageView在UIScrollView缩放后居中显示
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
     if (scrollView.zoomScale == scrollView.minimumZoomScale) {
