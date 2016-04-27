@@ -57,6 +57,8 @@
 		381796ED1CCF189F004F060F /* animal_city1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 381796EC1CCF189F004F060F /* animal_city1.jpg */; };
 		381796F01CCF3BCE004F060F /* timeline_image_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */; };
 		386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */; };
+		386D4CCC1CD0B8270066CFCE /* ZWOprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */; };
+		386D4CCF1CD0CAA00066CFCE /* ZWConcurrentOpration.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */; };
 		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
@@ -180,6 +182,10 @@
 		381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_image_loading@2x.png"; sourceTree = "<group>"; };
 		386D4CC71CD086F00066CFCE /* ZWSdWebImageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWSdWebImageTestViewController.h; sourceTree = "<group>"; };
 		386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWSdWebImageTestViewController.m; sourceTree = "<group>"; };
+		386D4CCA1CD0B8270066CFCE /* ZWOprationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWOprationViewController.h; sourceTree = "<group>"; };
+		386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWOprationViewController.m; sourceTree = "<group>"; };
+		386D4CCD1CD0CAA00066CFCE /* ZWConcurrentOpration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWConcurrentOpration.h; sourceTree = "<group>"; };
+		386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWConcurrentOpration.m; sourceTree = "<group>"; };
 		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
 		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
 		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
@@ -269,6 +275,10 @@
 				3817969D1CC9E9F4004F060F /* ZWScrollViewTestViewController.m */,
 				386D4CC71CD086F00066CFCE /* ZWSdWebImageTestViewController.h */,
 				386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */,
+				386D4CCA1CD0B8270066CFCE /* ZWOprationViewController.h */,
+				386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */,
+				386D4CCD1CD0CAA00066CFCE /* ZWConcurrentOpration.h */,
+				386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */,
 				3877305E1CC34C5A00FCE93E /* ZWObject.h */,
 				3877305F1CC34C5A00FCE93E /* ZWObject.m */,
 				3877302C1CBF55D200FCE93E /* ZWHandler.h */,
@@ -588,6 +598,8 @@
 				381796D51CCBA6E8004F060F /* ZWPhotoBrowserController.m in Sources */,
 				380FF6E51CBC934200EF1528 /* main.m in Sources */,
 				3816F91F1CC5D5680007616E /* WebViewJavascriptBridge_JS.m in Sources */,
+				386D4CCF1CD0CAA00066CFCE /* ZWConcurrentOpration.m in Sources */,
+				386D4CCC1CD0B8270066CFCE /* ZWOprationViewController.m in Sources */,
 				3816F9201CC5D5680007616E /* WebViewJavascriptBridgeBase.m in Sources */,
 				387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */,
 				381796C21CCA1652004F060F /* MKAnnotationView+WebCache.m in Sources */,
