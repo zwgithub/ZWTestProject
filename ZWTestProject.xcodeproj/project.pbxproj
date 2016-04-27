@@ -56,6 +56,7 @@
 		381796E71CCDC95C004F060F /* ZWLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 381796E61CCDC95C004F060F /* ZWLoadingView.m */; };
 		381796ED1CCF189F004F060F /* animal_city1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 381796EC1CCF189F004F060F /* animal_city1.jpg */; };
 		381796F01CCF3BCE004F060F /* timeline_image_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */; };
+		386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */; };
 		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
@@ -177,6 +178,8 @@
 		381796E61CCDC95C004F060F /* ZWLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLoadingView.m; sourceTree = "<group>"; };
 		381796EC1CCF189F004F060F /* animal_city1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animal_city1.jpg; sourceTree = "<group>"; };
 		381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_image_loading@2x.png"; sourceTree = "<group>"; };
+		386D4CC71CD086F00066CFCE /* ZWSdWebImageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWSdWebImageTestViewController.h; sourceTree = "<group>"; };
+		386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWSdWebImageTestViewController.m; sourceTree = "<group>"; };
 		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
 		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
 		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				3817964A1CC8A675004F060F /* ZWPhotoBrowserViewController.m */,
 				3817969C1CC9E9F4004F060F /* ZWScrollViewTestViewController.h */,
 				3817969D1CC9E9F4004F060F /* ZWScrollViewTestViewController.m */,
+				386D4CC71CD086F00066CFCE /* ZWSdWebImageTestViewController.h */,
+				386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */,
 				3877305E1CC34C5A00FCE93E /* ZWObject.h */,
 				3877305F1CC34C5A00FCE93E /* ZWObject.m */,
 				3877302C1CBF55D200FCE93E /* ZWHandler.h */,
@@ -596,6 +601,7 @@
 				381796C41CCA1652004F060F /* SDImageCache.m in Sources */,
 				380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */,
 				381796E41CCD2411004F060F /* ZWToolbar.m in Sources */,
+				386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */,
 				380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
