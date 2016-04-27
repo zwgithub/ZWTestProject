@@ -103,7 +103,7 @@
         
         CGFloat duration = 0.15;
         [UIView animateWithDuration:duration + 0.1 animations:^{
-            _imageView.frame = CGRectMake(self.width/2, self.height/2, 0, 0);
+            _imageView.frame = CGRectMake(self.frame.size.width/2, (self.frame.origin.y + self.frame.size.height)/2, 0, 0);
         } completion:^(BOOL finished) {
             if ([self.photoViewDelegate respondsToSelector:@selector(photoViewDidEndZoom:)]) {
                 [self.photoViewDelegate photoViewDidEndZoom:self];
@@ -233,7 +233,7 @@
     if (_photo.firstShow) { //第一次显示的图片
         _photo.firstShow = NO;  //已经显示过了
         
-        _imageView.frame = CGRectMake(self.width / 2, self.height / 2, 0, 0);
+        _imageView.frame = CGRectMake(self.frame.size.width/2, (self.frame.origin.y + self.frame.size.height)/2, 0, 0);
         [UIView animateWithDuration:0.3  animations:^{
             _imageView.frame = _imageFrame;
         } completion:^(BOOL finished) {
