@@ -16,6 +16,7 @@
 #import "ZWScrollViewTestViewController.h"
 #import "ZWSdWebImageTestViewController.h"
 #import "ZWOprationViewController.h"
+#import "ZWGCDViewController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -48,6 +49,7 @@
                        @{@"ZWScrollViewTestViewController" : @"scrollView 测试"},
                        @{@"ZWSdWebImageTestViewController" : @"SDWebimage 测试"},
                        @{@"ZWOprationViewController" : @"NSOpreation 测试"},
+                       @{@"ZWGCDViewController" : @"GCD 测试"},
                    ];
 }
 

@@ -50,6 +50,7 @@
                        @{@"nonConcurrent" : @"自定义 opration 非并行"},
                        @{@"concurrent" : @"自定义 opration 并行"},
                        @{@"dependency" : @"设置依赖"},
+                       @{@"opration_completionBlock" : @"监听操作"},
                    ];
 }
 
@@ -117,6 +118,7 @@
     }];
     
     //设置依赖 先执行 1，再执行 2，最后执行 3
+    //注意：设置依赖必须要在添加到队列之前
     [op3 addDependency:op2];
     [op2 addDependency:op1];
     
@@ -124,6 +126,16 @@
     [queue addOperation:op1];
     [queue addOperation:op2];
     [queue addOperation:op3];
+}
+
+//监听操作
+- (void)opration_completionBlock {
+    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperation) object:nil];
+    op.completionBlock = ^ {
+        NSLog(@"NSInvocationOperation 执行完毕了");
+    };
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:op];
 }
 
 #pragma mark - 
