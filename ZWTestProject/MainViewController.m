@@ -14,6 +14,8 @@
 #import "ZWBlockViewController.h"
 #import "ZWWebViewJavascriptBridgeController.h"
 #import "ZWScrollViewTestViewController.h"
+#import "ZWSdWebImageTestViewController.h"
+#import "ZWOprationViewController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -44,6 +46,8 @@
                        @{@"ZWWebViewJavascriptBridgeController" : @"OC 与 JS 交互"},
                        @{@"ZWPhotoBrowserViewController" : @"图片浏览"},
                        @{@"ZWScrollViewTestViewController" : @"scrollView 测试"},
+                       @{@"ZWSdWebImageTestViewController" : @"SDWebimage 测试"},
+                       @{@"ZWOprationViewController" : @"NSOpreation 测试"},
                    ];
 }
 
