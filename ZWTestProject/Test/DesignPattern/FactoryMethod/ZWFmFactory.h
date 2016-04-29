@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class ZWFmOperation;
+
 @interface ZWFmFactory : NSObject
+
++(ZWFmOperation *)createOperation;
 
 @end

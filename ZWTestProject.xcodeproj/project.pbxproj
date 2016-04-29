@@ -56,6 +56,7 @@
 		381796E71CCDC95C004F060F /* ZWLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 381796E61CCDC95C004F060F /* ZWLoadingView.m */; };
 		381796ED1CCF189F004F060F /* animal_city1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 381796EC1CCF189F004F060F /* animal_city1.jpg */; };
 		381796F01CCF3BCE004F060F /* timeline_image_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */; };
+		382AE79C1CD3414600A2472F /* ZWFmFactorySub.m in Sources */ = {isa = PBXBuildFile; fileRef = 382AE79B1CD3414600A2472F /* ZWFmFactorySub.m */; };
 		386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */; };
 		386D4CCC1CD0B8270066CFCE /* ZWOprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */; };
 		386D4CCF1CD0CAA00066CFCE /* ZWConcurrentOpration.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */; };
@@ -192,6 +193,8 @@
 		381796E61CCDC95C004F060F /* ZWLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLoadingView.m; sourceTree = "<group>"; };
 		381796EC1CCF189F004F060F /* animal_city1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animal_city1.jpg; sourceTree = "<group>"; };
 		381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_image_loading@2x.png"; sourceTree = "<group>"; };
+		382AE79A1CD3414600A2472F /* ZWFmFactorySub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmFactorySub.h; sourceTree = "<group>"; };
+		382AE79B1CD3414600A2472F /* ZWFmFactorySub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmFactorySub.m; sourceTree = "<group>"; };
 		386D4CC71CD086F00066CFCE /* ZWSdWebImageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWSdWebImageTestViewController.h; sourceTree = "<group>"; };
 		386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWSdWebImageTestViewController.m; sourceTree = "<group>"; };
 		386D4CCA1CD0B8270066CFCE /* ZWOprationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWOprationViewController.h; sourceTree = "<group>"; };
@@ -522,6 +525,8 @@
 				386D4D091CD1E3B30066CFCE /* ZWFmFactory.m */,
 				386D4D0B1CD219790066CFCE /* ZWFmFactoryAdd.h */,
 				386D4D0C1CD219790066CFCE /* ZWFmFactoryAdd.m */,
+				382AE79A1CD3414600A2472F /* ZWFmFactorySub.h */,
+				382AE79B1CD3414600A2472F /* ZWFmFactorySub.m */,
 			);
 			path = FactoryMethod;
 			sourceTree = "<group>";
@@ -659,6 +664,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382AE79C1CD3414600A2472F /* ZWFmFactorySub.m in Sources */,
 				381796C61CCA1652004F060F /* SDWebImageDecoder.m in Sources */,
 				381796D11CCA1652004F060F /* UIView+WebCacheOperation.m in Sources */,
 				380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */,

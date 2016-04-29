@@ -7,7 +7,12 @@
 //
 
 #import "ZWFmFactoryAdd.h"
+#import "ZWFmOperationAdd.h"
 
 @implementation ZWFmFactoryAdd
+
++(ZWFmOperation *)createOperation {
+    return [ZWFmOperationAdd new];
+}
 
 @end

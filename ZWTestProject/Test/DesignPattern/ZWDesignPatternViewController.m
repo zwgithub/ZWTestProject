@@ -9,6 +9,9 @@
 #import "ZWDesignPatternViewController.h"
 #import "Operation.h"
 #import "OpreationFactory.h"
+#import "ZWFmOperation.h"
+#import "ZWFmFactoryAdd.h"
+#import "ZWFmFactorySub.h"
 
 @interface ZWDesignPatternViewController ()
 
@@ -51,7 +54,15 @@
     和上面的简单工厂模式相比，多了个工厂抽象类。
  */
 - (void)factory_method {
+    ZWFmOperation *operation = [ZWFmFactoryAdd createOperation];
+    operation.numberOne = 1;
+    operation.numberTwo = 4;
+    NSLog(@"%f",[operation getResult]);
     
+    ZWFmOperation *op = [ZWFmFactorySub createOperation];
+    op.numberOne = 5;
+    op.numberTwo = 1;
+    NSLog(@"%f",[op getResult]);
 }
 
 @end
