@@ -59,6 +59,18 @@
 		386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */; };
 		386D4CCC1CD0B8270066CFCE /* ZWOprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */; };
 		386D4CCF1CD0CAA00066CFCE /* ZWConcurrentOpration.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */; };
+		386D4CD21CD0D9480066CFCE /* ZWGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CD11CD0D9480066CFCE /* ZWGCDViewController.m */; };
+		386D4CD51CD1A9F10066CFCE /* ZWBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CD41CD1A9F10066CFCE /* ZWBaseTableViewController.m */; };
+		386D4CE91CD1B01D0066CFCE /* ZWDesignPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CE81CD1B01D0066CFCE /* ZWDesignPatternViewController.m */; };
+		386D4CED1CD1B1EF0066CFCE /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CEC1CD1B1EF0066CFCE /* Operation.m */; };
+		386D4CF31CD1B2BD0066CFCE /* OperationAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CF21CD1B2BD0066CFCE /* OperationAdd.m */; };
+		386D4CF61CD1B2F10066CFCE /* OperationSub.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CF51CD1B2F10066CFCE /* OperationSub.m */; };
+		386D4CF91CD1B34C0066CFCE /* OpreationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CF81CD1B34C0066CFCE /* OpreationFactory.m */; };
+		386D4D011CD1E3050066CFCE /* ZWFmOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D001CD1E3050066CFCE /* ZWFmOperation.m */; };
+		386D4D041CD1E3610066CFCE /* ZWFmOperationAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D031CD1E3610066CFCE /* ZWFmOperationAdd.m */; };
+		386D4D071CD1E3810066CFCE /* ZWFmOperationSub.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D061CD1E3810066CFCE /* ZWFmOperationSub.m */; };
+		386D4D0A1CD1E3B30066CFCE /* ZWFmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D091CD1E3B30066CFCE /* ZWFmFactory.m */; };
+		386D4D0D1CD219790066CFCE /* ZWFmFactoryAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D0C1CD219790066CFCE /* ZWFmFactoryAdd.m */; };
 		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
@@ -186,6 +198,30 @@
 		386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWOprationViewController.m; sourceTree = "<group>"; };
 		386D4CCD1CD0CAA00066CFCE /* ZWConcurrentOpration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWConcurrentOpration.h; sourceTree = "<group>"; };
 		386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWConcurrentOpration.m; sourceTree = "<group>"; };
+		386D4CD01CD0D9480066CFCE /* ZWGCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWGCDViewController.h; sourceTree = "<group>"; };
+		386D4CD11CD0D9480066CFCE /* ZWGCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWGCDViewController.m; sourceTree = "<group>"; };
+		386D4CD31CD1A9F10066CFCE /* ZWBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseTableViewController.h; sourceTree = "<group>"; };
+		386D4CD41CD1A9F10066CFCE /* ZWBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseTableViewController.m; sourceTree = "<group>"; };
+		386D4CE71CD1B01D0066CFCE /* ZWDesignPatternViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWDesignPatternViewController.h; sourceTree = "<group>"; };
+		386D4CE81CD1B01D0066CFCE /* ZWDesignPatternViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWDesignPatternViewController.m; sourceTree = "<group>"; };
+		386D4CEB1CD1B1EF0066CFCE /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
+		386D4CEC1CD1B1EF0066CFCE /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
+		386D4CF11CD1B2BD0066CFCE /* OperationAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationAdd.h; sourceTree = "<group>"; };
+		386D4CF21CD1B2BD0066CFCE /* OperationAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationAdd.m; sourceTree = "<group>"; };
+		386D4CF41CD1B2F10066CFCE /* OperationSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationSub.h; sourceTree = "<group>"; };
+		386D4CF51CD1B2F10066CFCE /* OperationSub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationSub.m; sourceTree = "<group>"; };
+		386D4CF71CD1B34C0066CFCE /* OpreationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpreationFactory.h; sourceTree = "<group>"; };
+		386D4CF81CD1B34C0066CFCE /* OpreationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpreationFactory.m; sourceTree = "<group>"; };
+		386D4CFF1CD1E3050066CFCE /* ZWFmOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmOperation.h; sourceTree = "<group>"; };
+		386D4D001CD1E3050066CFCE /* ZWFmOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmOperation.m; sourceTree = "<group>"; };
+		386D4D021CD1E3610066CFCE /* ZWFmOperationAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmOperationAdd.h; sourceTree = "<group>"; };
+		386D4D031CD1E3610066CFCE /* ZWFmOperationAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmOperationAdd.m; sourceTree = "<group>"; };
+		386D4D051CD1E3810066CFCE /* ZWFmOperationSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmOperationSub.h; sourceTree = "<group>"; };
+		386D4D061CD1E3810066CFCE /* ZWFmOperationSub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmOperationSub.m; sourceTree = "<group>"; };
+		386D4D081CD1E3B30066CFCE /* ZWFmFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmFactory.h; sourceTree = "<group>"; };
+		386D4D091CD1E3B30066CFCE /* ZWFmFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmFactory.m; sourceTree = "<group>"; };
+		386D4D0B1CD219790066CFCE /* ZWFmFactoryAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmFactoryAdd.h; sourceTree = "<group>"; };
+		386D4D0C1CD219790066CFCE /* ZWFmFactoryAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmFactoryAdd.m; sourceTree = "<group>"; };
 		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
 		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
 		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
@@ -244,6 +280,7 @@
 		380FF6E21CBC934200EF1528 /* ZWTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				386D4CE51CD1B01D0066CFCE /* Test */,
 				3817962E1CC8A5DA004F060F /* Refrence */,
 				3816F9251CC5D6200007616E /* Resource */,
 				3816F9151CC5D5680007616E /* WebViewJavascriptBridge */,
@@ -279,6 +316,8 @@
 				386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */,
 				386D4CCD1CD0CAA00066CFCE /* ZWConcurrentOpration.h */,
 				386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */,
+				386D4CD01CD0D9480066CFCE /* ZWGCDViewController.h */,
+				386D4CD11CD0D9480066CFCE /* ZWGCDViewController.m */,
 				3877305E1CC34C5A00FCE93E /* ZWObject.h */,
 				3877305F1CC34C5A00FCE93E /* ZWObject.m */,
 				3877302C1CBF55D200FCE93E /* ZWHandler.h */,
@@ -328,6 +367,8 @@
 				380FF71E1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m */,
 				3816F90F1CC4BFC60007616E /* ZWTabBarController.h */,
 				3816F9101CC4BFC60007616E /* ZWTabBarController.m */,
+				386D4CD31CD1A9F10066CFCE /* ZWBaseTableViewController.h */,
+				386D4CD41CD1A9F10066CFCE /* ZWBaseTableViewController.m */,
 			);
 			path = BaseViewControler;
 			sourceTree = "<group>";
@@ -432,6 +473,57 @@
 				381796E61CCDC95C004F060F /* ZWLoadingView.m */,
 			);
 			path = ZWPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		386D4CE51CD1B01D0066CFCE /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				386D4CE61CD1B01D0066CFCE /* DesignPattern */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		386D4CE61CD1B01D0066CFCE /* DesignPattern */ = {
+			isa = PBXGroup;
+			children = (
+				386D4CFE1CD1E28B0066CFCE /* FactoryMethod */,
+				386D4CEA1CD1B0790066CFCE /* SimpleFactory */,
+				386D4CE71CD1B01D0066CFCE /* ZWDesignPatternViewController.h */,
+				386D4CE81CD1B01D0066CFCE /* ZWDesignPatternViewController.m */,
+			);
+			path = DesignPattern;
+			sourceTree = "<group>";
+		};
+		386D4CEA1CD1B0790066CFCE /* SimpleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				386D4CEB1CD1B1EF0066CFCE /* Operation.h */,
+				386D4CEC1CD1B1EF0066CFCE /* Operation.m */,
+				386D4CF11CD1B2BD0066CFCE /* OperationAdd.h */,
+				386D4CF21CD1B2BD0066CFCE /* OperationAdd.m */,
+				386D4CF41CD1B2F10066CFCE /* OperationSub.h */,
+				386D4CF51CD1B2F10066CFCE /* OperationSub.m */,
+				386D4CF71CD1B34C0066CFCE /* OpreationFactory.h */,
+				386D4CF81CD1B34C0066CFCE /* OpreationFactory.m */,
+			);
+			path = SimpleFactory;
+			sourceTree = "<group>";
+		};
+		386D4CFE1CD1E28B0066CFCE /* FactoryMethod */ = {
+			isa = PBXGroup;
+			children = (
+				386D4CFF1CD1E3050066CFCE /* ZWFmOperation.h */,
+				386D4D001CD1E3050066CFCE /* ZWFmOperation.m */,
+				386D4D021CD1E3610066CFCE /* ZWFmOperationAdd.h */,
+				386D4D031CD1E3610066CFCE /* ZWFmOperationAdd.m */,
+				386D4D051CD1E3810066CFCE /* ZWFmOperationSub.h */,
+				386D4D061CD1E3810066CFCE /* ZWFmOperationSub.m */,
+				386D4D081CD1E3B30066CFCE /* ZWFmFactory.h */,
+				386D4D091CD1E3B30066CFCE /* ZWFmFactory.m */,
+				386D4D0B1CD219790066CFCE /* ZWFmFactoryAdd.h */,
+				386D4D0C1CD219790066CFCE /* ZWFmFactoryAdd.m */,
+			);
+			path = FactoryMethod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,28 +665,39 @@
 				381796C91CCA1652004F060F /* SDWebImageManager.m in Sources */,
 				3817969E1CC9E9F4004F060F /* ZWScrollViewTestViewController.m in Sources */,
 				3816F91E1CC5D5680007616E /* WebViewJavascriptBridge.m in Sources */,
+				386D4CF61CD1B2F10066CFCE /* OperationSub.m in Sources */,
 				3816F9241CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m in Sources */,
+				386D4CF91CD1B34C0066CFCE /* OpreationFactory.m in Sources */,
 				381796C51CCA1652004F060F /* SDWebImageCompat.m in Sources */,
 				381796DB1CCBAAE5004F060F /* ZWPhotoView.m in Sources */,
 				381796C81CCA1652004F060F /* SDWebImageDownloaderOperation.m in Sources */,
 				3816F92A1CC5DC8C0007616E /* ZWWebViewTestViewController.m in Sources */,
+				386D4CE91CD1B01D0066CFCE /* ZWDesignPatternViewController.m in Sources */,
 				380FF80C1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m in Sources */,
 				381796D01CCA1652004F060F /* UIImageView+WebCache.m in Sources */,
 				3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */,
 				3817964B1CC8A675004F060F /* ZWPhotoBrowserViewController.m in Sources */,
 				380FF7241CBCAB4300EF1528 /* UIView+Additions.m in Sources */,
+				386D4CD51CD1A9F10066CFCE /* ZWBaseTableViewController.m in Sources */,
+				386D4CD21CD0D9480066CFCE /* ZWGCDViewController.m in Sources */,
 				381796E11CCBAD24004F060F /* SDWebImageManager+ZWAdditions.m in Sources */,
 				381796CF1CCA1652004F060F /* UIImageView+HighlightedWebCache.m in Sources */,
 				380FF7191CBCA3AC00EF1528 /* ZWBaseViewController.m in Sources */,
+				386D4D041CD1E3610066CFCE /* ZWFmOperationAdd.m in Sources */,
 				380FF6E81CBC934200EF1528 /* AppDelegate.m in Sources */,
 				381796E71CCDC95C004F060F /* ZWLoadingView.m in Sources */,
 				3816F9211CC5D5680007616E /* WKWebViewJavascriptBridge.m in Sources */,
+				386D4D0D1CD219790066CFCE /* ZWFmFactoryAdd.m in Sources */,
 				381796CC1CCA1652004F060F /* UIImage+GIF.m in Sources */,
 				381796CD1CCA1652004F060F /* UIImage+MultiFormat.m in Sources */,
+				386D4CF31CD1B2BD0066CFCE /* OperationAdd.m in Sources */,
 				381796D81CCBA761004F060F /* ZWPhoto.m in Sources */,
 				3816F9111CC4BFC60007616E /* ZWTabBarController.m in Sources */,
 				381796CE1CCA1652004F060F /* UIImage+WebP.m in Sources */,
+				386D4D071CD1E3810066CFCE /* ZWFmOperationSub.m in Sources */,
 				381796CA1CCA1652004F060F /* SDWebImagePrefetcher.m in Sources */,
+				386D4CED1CD1B1EF0066CFCE /* Operation.m in Sources */,
+				386D4D0A1CD1E3B30066CFCE /* ZWFmFactory.m in Sources */,
 				381796D51CCBA6E8004F060F /* ZWPhotoBrowserController.m in Sources */,
 				380FF6E51CBC934200EF1528 /* main.m in Sources */,
 				3816F91F1CC5D5680007616E /* WebViewJavascriptBridge_JS.m in Sources */,
@@ -607,6 +710,7 @@
 				381796C71CCA1652004F060F /* SDWebImageDownloader.m in Sources */,
 				381796CB1CCA1652004F060F /* UIButton+WebCache.m in Sources */,
 				387730601CC34C5A00FCE93E /* ZWObject.m in Sources */,
+				386D4D011CD1E3050066CFCE /* ZWFmOperation.m in Sources */,
 				381796C31CCA1652004F060F /* NSData+ImageContentType.m in Sources */,
 				380FF71F1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m in Sources */,
 				3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */,

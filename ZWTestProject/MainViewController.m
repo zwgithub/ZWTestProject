@@ -16,6 +16,7 @@
 #import "ZWScrollViewTestViewController.h"
 #import "ZWSdWebImageTestViewController.h"
 #import "ZWOprationViewController.h"
+#import "ZWGCDViewController.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -38,6 +39,7 @@
     [self.view addSubview:_tableView];
     
     _dataArray = @[
+                       @{@"ZWDesignPatternViewController" : @"设计模式"},
                        @{@"ZWAssociatedViewController" : @"关联对象测试"},
                        @{@"ZWRuntimeViewController" : @"运行时常用函数"},
                        @{@"ZWForwardInvocationViewController" : @"消息转发测试"},
@@ -48,6 +50,7 @@
                        @{@"ZWScrollViewTestViewController" : @"scrollView 测试"},
                        @{@"ZWSdWebImageTestViewController" : @"SDWebimage 测试"},
                        @{@"ZWOprationViewController" : @"NSOpreation 测试"},
+                       @{@"ZWGCDViewController" : @"GCD 测试"},
                    ];
 }
 

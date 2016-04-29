@@ -49,6 +49,8 @@
                        @{@"oprationQueue" : @"oprationQueue"},
                        @{@"nonConcurrent" : @"自定义 opration 非并行"},
                        @{@"concurrent" : @"自定义 opration 并行"},
+                       @{@"dependency" : @"设置依赖"},
+                       @{@"opration_completionBlock" : @"监听操作"},
                    ];
 }
 
@@ -76,17 +78,15 @@
 }
 
 - (void)oprationQueue {
-    
     NSInvocationOperation *op1 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperation1) object:nil];
     NSInvocationOperation *op2 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperation2) object:nil];
     
     NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"NSBlockOperation:%@",[NSThread currentThread]);
+        NSLog(@"NSBlockOperation3-1:%@",[NSThread currentThread]);
     }];
     [op3 addExecutionBlock:^{
-        NSLog(@"NSBlockOperation1:%@",[NSThread currentThread]);
+        NSLog(@"NSBlockOperation3-2:%@",[NSThread currentThread]);
     }];
-    
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [queue addOperation:op1];
@@ -106,6 +106,38 @@
     [queue addOperation:op];
 }
 
+- (void)dependency {
+    NSInvocationOperation *op1 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperation1) object:nil];
+    NSInvocationOperation *op2 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperation2) object:nil];
+    
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"NSBlockOperation3-1:%@",[NSThread currentThread]);
+    }];
+    [op3 addExecutionBlock:^{
+        NSLog(@"NSBlockOperation2-2:%@",[NSThread currentThread]);
+    }];
+    
+    //设置依赖 先执行 1，再执行 2，最后执行 3
+    //注意：设置依赖必须要在添加到队列之前
+    [op3 addDependency:op2];
+    [op2 addDependency:op1];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+}
+
+//监听操作
+- (void)opration_completionBlock {
+    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperation) object:nil];
+    op.completionBlock = ^ {
+        NSLog(@"NSInvocationOperation 执行完毕了");
+    };
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:op];
+}
+
 #pragma mark - 
 
 - (void) invocationOperation {
@@ -113,11 +145,11 @@
 }
 
 - (void) invocationOperation1 {
-    NSLog(@"invocationOperation:%@",[NSThread currentThread]);
+    NSLog(@"invocationOperation1:%@",[NSThread currentThread]);
 }
 
 - (void) invocationOperation2 {
-    NSLog(@"invocationOperation:%@",[NSThread currentThread]);
+    NSLog(@"invocationOperation2:%@",[NSThread currentThread]);
 }
 
 #pragma UITableViewDataSource && UITableViewDelegate
