@@ -39,6 +39,7 @@
     [self.view addSubview:_tableView];
     
     _dataArray = @[
+                       @{@"ZWCalculateFunViewController" : @"数据结构与算法"},
                        @{@"ZWDesignPatternViewController" : @"设计模式"},
                        @{@"ZWAssociatedViewController" : @"关联对象测试"},
                        @{@"ZWRuntimeViewController" : @"运行时常用函数"},

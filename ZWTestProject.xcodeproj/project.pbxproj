@@ -57,6 +57,7 @@
 		381796ED1CCF189F004F060F /* animal_city1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 381796EC1CCF189F004F060F /* animal_city1.jpg */; };
 		381796F01CCF3BCE004F060F /* timeline_image_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */; };
 		382AE79C1CD3414600A2472F /* ZWFmFactorySub.m in Sources */ = {isa = PBXBuildFile; fileRef = 382AE79B1CD3414600A2472F /* ZWFmFactorySub.m */; };
+		382AE79F1CD4888B00A2472F /* ZWCalculateFunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382AE79E1CD4888B00A2472F /* ZWCalculateFunViewController.m */; };
 		386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */; };
 		386D4CCC1CD0B8270066CFCE /* ZWOprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCB1CD0B8270066CFCE /* ZWOprationViewController.m */; };
 		386D4CCF1CD0CAA00066CFCE /* ZWConcurrentOpration.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4CCE1CD0CAA00066CFCE /* ZWConcurrentOpration.m */; };
@@ -195,6 +196,8 @@
 		381796EF1CCF3BCE004F060F /* timeline_image_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_image_loading@2x.png"; sourceTree = "<group>"; };
 		382AE79A1CD3414600A2472F /* ZWFmFactorySub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmFactorySub.h; sourceTree = "<group>"; };
 		382AE79B1CD3414600A2472F /* ZWFmFactorySub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmFactorySub.m; sourceTree = "<group>"; };
+		382AE79D1CD4888B00A2472F /* ZWCalculateFunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWCalculateFunViewController.h; sourceTree = "<group>"; };
+		382AE79E1CD4888B00A2472F /* ZWCalculateFunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWCalculateFunViewController.m; sourceTree = "<group>"; };
 		386D4CC71CD086F00066CFCE /* ZWSdWebImageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWSdWebImageTestViewController.h; sourceTree = "<group>"; };
 		386D4CC81CD086F00066CFCE /* ZWSdWebImageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWSdWebImageTestViewController.m; sourceTree = "<group>"; };
 		386D4CCA1CD0B8270066CFCE /* ZWOprationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWOprationViewController.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				380FF71A1CBCA79E00EF1528 /* MainViewController.h */,
 				380FF71B1CBCA79E00EF1528 /* MainViewController.m */,
 				380FF7271CBCAF3300EF1528 /* ZWAssociatedViewController.m */,
+				382AE79D1CD4888B00A2472F /* ZWCalculateFunViewController.h */,
+				382AE79E1CD4888B00A2472F /* ZWCalculateFunViewController.m */,
 				380FF7291CBCF37800EF1528 /* ZWRuntimeViewController.h */,
 				380FF72A1CBCF37800EF1528 /* ZWRuntimeViewController.m */,
 				380FF7FB1CBE176600EF1528 /* ZWForwardInvocationViewController.h */,
@@ -670,6 +675,7 @@
 				380FF72B1CBCF37800EF1528 /* ZWRuntimeViewController.m in Sources */,
 				381796C91CCA1652004F060F /* SDWebImageManager.m in Sources */,
 				3817969E1CC9E9F4004F060F /* ZWScrollViewTestViewController.m in Sources */,
+				382AE79F1CD4888B00A2472F /* ZWCalculateFunViewController.m in Sources */,
 				3816F91E1CC5D5680007616E /* WebViewJavascriptBridge.m in Sources */,
 				386D4CF61CD1B2F10066CFCE /* OperationSub.m in Sources */,
 				3816F9241CC5D5A00007616E /* ZWWebViewJavascriptBridgeController.m in Sources */,
