@@ -37,7 +37,6 @@ static NSString *const cellId = @"cellId";
 //    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellId];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    
     UICollectionView *colView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64) collectionViewLayout:layout];
     colView.backgroundColor = [UIColor grayColor];
     [colView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myCell"];
@@ -45,16 +44,20 @@ static NSString *const cellId = @"cellId";
     [colView registerClass:[ZWSupplementaryView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
     colView.delegate = self;
     colView.dataSource = self;
-    
     [self.view addSubview:colView];
 }
 
-#pragma mark - <UICollectionViewDataSource>
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 15;
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
+#pragma mark UICollectionViewDataSource
+//每个section里有多少个cell
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 8;
+}
+
+//有多少个section
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 4;
 }
@@ -66,6 +69,7 @@ static NSString *const cellId = @"cellId";
     return cell;
 }
 
+//headerView和footerView
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     
     NSString *reuseIdentifier;
@@ -87,18 +91,15 @@ static NSString *const cellId = @"cellId";
     return view;
 }
 
+#pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"section:%ld,index:%ld",indexPath.section,(long)indexPath.row);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark UICollectionViewDelegateFlowLayout
 //定义每个UICollectionView 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(96, 100);
+    return CGSizeMake(90, 100);
 }
 
 //定义每个UICollectionView的margin
@@ -111,20 +112,19 @@ static NSString *const cellId = @"cellId";
     return 5;
 }
 
-
 //每个item之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 5;
 }
 
-//返回头headerView的大小
+//返回headerView的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(0, 50);
+    return CGSizeMake(collectionView.width, 50);
 }
 
-//返回头footerView的大小
+//返回footerView的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
-    return CGSizeMake(0, 50);
+    return CGSizeMake(collectionView.width, 50);
 }
 
 @end
