@@ -33,12 +33,17 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.title = @"各种测试";
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
     _dataArray = @[
+                       @{@"ZWCustomCollectViewController" : @"自定义CollectionView布局"},
+                       @{@"ZWCollectionViewController" : @"CollectionView"},
+                       @{@"ZWLabelViewController" : @"label测试"},
+                       @{@"ZWPhoneCallViewController" : @"电话打进来"},
+                       @{@"ZWPickerViewController" : @"pickerView"},
                        @{@"ZWCalculateFunViewController" : @"数据结构与算法"},
                        @{@"ZWDesignPatternViewController" : @"设计模式"},
                        @{@"ZWAssociatedViewController" : @"关联对象测试"},
