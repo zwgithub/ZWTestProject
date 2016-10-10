@@ -41,7 +41,8 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:@"2",@"3",@"5",@"4",@"1",nil];
 //    [self bubbleSort:array];
-    [self quickSortWithArray:array left:0 right:array.count - 1];
+//    [self quickSortWithArray:array left:0 right:array.count - 1];
+    [self insertSort:array];
     [self printArray:array];
 }
 
@@ -89,6 +90,22 @@
         [array replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%ld",x]];
         [self quickSortWithArray:array left:left right:i-1];
         [self quickSortWithArray:array left:i+1 right:right];
+    }
+    return array;
+}
+
+//直接插入排序
+- (NSMutableArray *)insertSort:(NSMutableArray *)array {
+    //假定第一个是排好序的，所以 i 从 1 开始
+    for (NSInteger i = 1; i < array.count; i++) {
+        NSInteger j = i;
+        NSInteger target = [[array objectAtIndex:i] integerValue];
+        
+        while (j > 0 && target < [[array objectAtIndex:j - 1] integerValue]) {
+            [array replaceObjectAtIndex:j withObject:[array objectAtIndex:j - 1]];
+            j--;
+        }
+        [array replaceObjectAtIndex:j withObject:[NSString stringWithFormat:@"%ld",target]];
     }
     return array;
 }
