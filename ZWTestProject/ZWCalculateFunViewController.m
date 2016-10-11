@@ -42,7 +42,8 @@
     NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:@"2",@"3",@"5",@"4",@"1",nil];
 //    [self bubbleSort:array];
 //    [self quickSortWithArray:array left:0 right:array.count - 1];
-    [self insertSort:array];
+//    [self insertSort:array];
+    [self shellSort:array];
     [self printArray:array];
 }
 
@@ -107,6 +108,24 @@
         }
         [array replaceObjectAtIndex:j withObject:[NSString stringWithFormat:@"%ld",target]];
     }
+    return array;
+}
+
+//希尔排序
+- (NSMutableArray *)shellSort:(NSMutableArray *)array {
+    NSInteger gap = array.count / 2;
+    while (1 <= gap) {
+        for (NSInteger i = gap; i < array.count; i++) {
+            NSInteger j;
+            NSInteger tmp = [[array objectAtIndex:i] integerValue];
+            for (j = i - gap; j >= 0 && tmp < [[array objectAtIndex:j] integerValue]; j -= gap) {
+                [array replaceObjectAtIndex:j + gap withObject:[array objectAtIndex:j]];
+            }
+            [array replaceObjectAtIndex:j + gap withObject:[NSString stringWithFormat:@"%ld",tmp]];
+        }
+        gap = gap / 2;
+    }
+    
     return array;
 }
 
