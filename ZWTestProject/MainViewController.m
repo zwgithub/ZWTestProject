@@ -39,6 +39,8 @@
     [self.view addSubview:_tableView];
     
     _dataArray = @[
+                   
+                       @{@"ZWResponderChainViewController" : @"响应者链"},
                        @{@"ZWCustomCollectViewController" : @"自定义CollectionView布局"},
                        @{@"ZWCollectionViewController" : @"CollectionView"},
                        @{@"ZWLabelViewController" : @"label测试"},

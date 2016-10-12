@@ -87,6 +87,8 @@
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
 		387730601CC34C5A00FCE93E /* ZWObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877305F1CC34C5A00FCE93E /* ZWObject.m */; };
+		388683271DADCFB2005A344B /* ZWResponderChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388683261DADCFB2005A344B /* ZWResponderChainViewController.m */; };
+		3886832B1DADD551005A344B /* ZWResponderChainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886832A1DADD551005A344B /* ZWResponderChainView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +267,10 @@
 		387730361CC0F33B00FCE93E /* ZWBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBlockViewController.m; sourceTree = "<group>"; };
 		3877305E1CC34C5A00FCE93E /* ZWObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWObject.h; sourceTree = "<group>"; };
 		3877305F1CC34C5A00FCE93E /* ZWObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWObject.m; sourceTree = "<group>"; };
+		388683251DADCFB2005A344B /* ZWResponderChainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWResponderChainViewController.h; sourceTree = "<group>"; };
+		388683261DADCFB2005A344B /* ZWResponderChainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWResponderChainViewController.m; sourceTree = "<group>"; };
+		388683291DADD551005A344B /* ZWResponderChainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWResponderChainView.h; sourceTree = "<group>"; };
+		3886832A1DADD551005A344B /* ZWResponderChainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWResponderChainView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +321,7 @@
 		380FF6E21CBC934200EF1528 /* ZWTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				388683281DADD525005A344B /* Views */,
 				386D4CE51CD1B01D0066CFCE /* Test */,
 				3817962E1CC8A5DA004F060F /* Refrence */,
 				3816F9251CC5D6200007616E /* Resource */,
@@ -325,6 +332,8 @@
 				380FF6E71CBC934200EF1528 /* AppDelegate.m */,
 				380FF71A1CBCA79E00EF1528 /* MainViewController.h */,
 				380FF71B1CBCA79E00EF1528 /* MainViewController.m */,
+				388683251DADCFB2005A344B /* ZWResponderChainViewController.h */,
+				388683261DADCFB2005A344B /* ZWResponderChainViewController.m */,
 				381D855A1CEAAC610058B2FE /* ZWPhoneCallViewController.h */,
 				381D855B1CEAAC610058B2FE /* ZWPhoneCallViewController.m */,
 				385FCF8D1CE315280095C271 /* ZWPickerViewController.h */,
@@ -584,6 +593,15 @@
 			path = FactoryMethod;
 			sourceTree = "<group>";
 		};
+		388683281DADD525005A344B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				388683291DADD551005A344B /* ZWResponderChainView.h */,
+				3886832A1DADD551005A344B /* ZWResponderChainView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -750,6 +768,7 @@
 				386D4D041CD1E3610066CFCE /* ZWFmOperationAdd.m in Sources */,
 				380FF6E81CBC934200EF1528 /* AppDelegate.m in Sources */,
 				381D855C1CEAAC610058B2FE /* ZWPhoneCallViewController.m in Sources */,
+				388683271DADCFB2005A344B /* ZWResponderChainViewController.m in Sources */,
 				380B7DED1D17CFB4008B4177 /* ZWCollectionViewCell.m in Sources */,
 				381796E71CCDC95C004F060F /* ZWLoadingView.m in Sources */,
 				3816F9211CC5D5680007616E /* WKWebViewJavascriptBridge.m in Sources */,
@@ -789,6 +808,7 @@
 				386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */,
 				385FCF8F1CE315280095C271 /* ZWPickerViewController.m in Sources */,
 				380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */,
+				3886832B1DADD551005A344B /* ZWResponderChainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
