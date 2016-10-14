@@ -31,9 +31,9 @@ void (^maxBlk)(void) = ^(void){};
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ZWObject *A = [[ZWObject alloc] init];
-    [A execBlock];
-    NSLog(@"object:%@",A);
+//    ZWObject *A = [[ZWObject alloc] init];
+//    [A execBlock];
+//    NSLog(@"object:%@",A);
     
 //    [self test];
     
@@ -66,6 +66,8 @@ void (^maxBlk)(void) = ^(void){};
 //    NSArray *array = [self gettBlockArray];
 //    bl blk0 = (bl)[array objectAtIndex:0];
 //    blk0();
+    
+    
 }
 
 - (NSArray *)gettBlockArray{
@@ -96,6 +98,33 @@ void (^maxBlk)(void) = ^(void){};
 
 - (void)dealloc {
     NSLog(@"ZWBlockViewController dealloc");
+}
+
+- (void)fragmentTest {
+    NSMutableArray *mArr = [NSMutableArray new];
+    dispatch_block_t block = ^ {
+        //不允许这种写法，所以这道题根本就编译不过去
+//        mArr = [NSMutableArray new];
+        [mArr addObject:@(1)];
+    };
+    dispatch_async(dispatch_get_main_queue(), block);
+    [mArr addObject:@(2)];
+    NSLog(@"%@",mArr);
+    
+    NSMutableArray *bArr = [NSMutableArray new];
+    dispatch_block_t block1 = ^ {
+        [bArr addObject:@(1)];
+    };
+    dispatch_sync(dispatch_get_main_queue(), block1);
+    [bArr addObject:@(2)];
+    NSLog(@"%@",bArr);
+}
+
+void exampleA() {
+    char a = 'A';
+    ^{
+        printf("%cn", a);
+    }();
 }
 
 @end
