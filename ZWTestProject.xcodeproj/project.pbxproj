@@ -83,12 +83,16 @@
 		386D4D071CD1E3810066CFCE /* ZWFmOperationSub.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D061CD1E3810066CFCE /* ZWFmOperationSub.m */; };
 		386D4D0A1CD1E3B30066CFCE /* ZWFmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D091CD1E3B30066CFCE /* ZWFmFactory.m */; };
 		386D4D0D1CD219790066CFCE /* ZWFmFactoryAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 386D4D0C1CD219790066CFCE /* ZWFmFactoryAdd.m */; };
+		386F5BD81DBF4233000156C8 /* ZWWillMoveToSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386F5BD71DBF4233000156C8 /* ZWWillMoveToSuperViewController.m */; };
+		386F5BDB1DBF427D000156C8 /* ZWMoveToSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386F5BDA1DBF427D000156C8 /* ZWMoveToSuperView.m */; };
 		3877302B1CBF55B500FCE93E /* ZWLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */; };
 		3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877302D1CBF55D200FCE93E /* ZWHandler.m */; };
 		387730371CC0F33B00FCE93E /* ZWBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387730361CC0F33B00FCE93E /* ZWBlockViewController.m */; };
 		387730601CC34C5A00FCE93E /* ZWObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877305F1CC34C5A00FCE93E /* ZWObject.m */; };
 		388683271DADCFB2005A344B /* ZWResponderChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388683261DADCFB2005A344B /* ZWResponderChainViewController.m */; };
 		3886832B1DADD551005A344B /* ZWResponderChainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886832A1DADD551005A344B /* ZWResponderChainView.m */; };
+		3886832E1DB087FA005A344B /* ZWTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886832D1DB087FA005A344B /* ZWTimerViewController.m */; };
+		38B065CC1DBF45BD00085E14 /* ZWSubMoveToSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B065CB1DBF45BD00085E14 /* ZWSubMoveToSuperView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,6 +263,10 @@
 		386D4D091CD1E3B30066CFCE /* ZWFmFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmFactory.m; sourceTree = "<group>"; };
 		386D4D0B1CD219790066CFCE /* ZWFmFactoryAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWFmFactoryAdd.h; sourceTree = "<group>"; };
 		386D4D0C1CD219790066CFCE /* ZWFmFactoryAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWFmFactoryAdd.m; sourceTree = "<group>"; };
+		386F5BD61DBF4233000156C8 /* ZWWillMoveToSuperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWillMoveToSuperViewController.h; sourceTree = "<group>"; };
+		386F5BD71DBF4233000156C8 /* ZWWillMoveToSuperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWillMoveToSuperViewController.m; sourceTree = "<group>"; };
+		386F5BD91DBF427D000156C8 /* ZWMoveToSuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWMoveToSuperView.h; sourceTree = "<group>"; };
+		386F5BDA1DBF427D000156C8 /* ZWMoveToSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWMoveToSuperView.m; sourceTree = "<group>"; };
 		387730291CBF55B500FCE93E /* ZWLeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWLeakViewController.h; sourceTree = "<group>"; };
 		3877302A1CBF55B500FCE93E /* ZWLeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWLeakViewController.m; sourceTree = "<group>"; };
 		3877302C1CBF55D200FCE93E /* ZWHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWHandler.h; sourceTree = "<group>"; };
@@ -271,6 +279,10 @@
 		388683261DADCFB2005A344B /* ZWResponderChainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWResponderChainViewController.m; sourceTree = "<group>"; };
 		388683291DADD551005A344B /* ZWResponderChainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWResponderChainView.h; sourceTree = "<group>"; };
 		3886832A1DADD551005A344B /* ZWResponderChainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWResponderChainView.m; sourceTree = "<group>"; };
+		3886832C1DB087FA005A344B /* ZWTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWTimerViewController.h; sourceTree = "<group>"; };
+		3886832D1DB087FA005A344B /* ZWTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWTimerViewController.m; sourceTree = "<group>"; };
+		38B065CA1DBF45BD00085E14 /* ZWSubMoveToSuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWSubMoveToSuperView.h; sourceTree = "<group>"; };
+		38B065CB1DBF45BD00085E14 /* ZWSubMoveToSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWSubMoveToSuperView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +344,10 @@
 				380FF6E71CBC934200EF1528 /* AppDelegate.m */,
 				380FF71A1CBCA79E00EF1528 /* MainViewController.h */,
 				380FF71B1CBCA79E00EF1528 /* MainViewController.m */,
+				386F5BD61DBF4233000156C8 /* ZWWillMoveToSuperViewController.h */,
+				386F5BD71DBF4233000156C8 /* ZWWillMoveToSuperViewController.m */,
+				3886832C1DB087FA005A344B /* ZWTimerViewController.h */,
+				3886832D1DB087FA005A344B /* ZWTimerViewController.m */,
 				388683251DADCFB2005A344B /* ZWResponderChainViewController.h */,
 				388683261DADCFB2005A344B /* ZWResponderChainViewController.m */,
 				381D855A1CEAAC610058B2FE /* ZWPhoneCallViewController.h */,
@@ -387,6 +403,10 @@
 				3877305F1CC34C5A00FCE93E /* ZWObject.m */,
 				3877302C1CBF55D200FCE93E /* ZWHandler.h */,
 				3877302D1CBF55D200FCE93E /* ZWHandler.m */,
+				386F5BD91DBF427D000156C8 /* ZWMoveToSuperView.h */,
+				386F5BDA1DBF427D000156C8 /* ZWMoveToSuperView.m */,
+				38B065CA1DBF45BD00085E14 /* ZWSubMoveToSuperView.h */,
+				38B065CB1DBF45BD00085E14 /* ZWSubMoveToSuperView.m */,
 				380FF6EC1CBC934200EF1528 /* Main.storyboard */,
 				380FF6EF1CBC934200EF1528 /* Assets.xcassets */,
 				380FF6F11CBC934200EF1528 /* LaunchScreen.storyboard */,
@@ -753,6 +773,8 @@
 				381796C81CCA1652004F060F /* SDWebImageDownloaderOperation.m in Sources */,
 				3816F92A1CC5DC8C0007616E /* ZWWebViewTestViewController.m in Sources */,
 				385CAD6E1CFE8F0800BD4F1B /* ZWLabelViewController.m in Sources */,
+				3886832E1DB087FA005A344B /* ZWTimerViewController.m in Sources */,
+				386F5BD81DBF4233000156C8 /* ZWWillMoveToSuperViewController.m in Sources */,
 				386D4CE91CD1B01D0066CFCE /* ZWDesignPatternViewController.m in Sources */,
 				380FF80C1CBE4FBF00EF1528 /* UIViewController+ExchangeImplemations.m in Sources */,
 				381796D01CCA1652004F060F /* UIImageView+WebCache.m in Sources */,
@@ -801,6 +823,7 @@
 				386D4D011CD1E3050066CFCE /* ZWFmOperation.m in Sources */,
 				381796C31CCA1652004F060F /* NSData+ImageContentType.m in Sources */,
 				380FF71F1CBCA7DE00EF1528 /* ZWBaseNavgationViewController.m in Sources */,
+				386F5BDB1DBF427D000156C8 /* ZWMoveToSuperView.m in Sources */,
 				3877302E1CBF55D200FCE93E /* ZWHandler.m in Sources */,
 				381796C41CCA1652004F060F /* SDImageCache.m in Sources */,
 				380FF7FD1CBE176600EF1528 /* ZWForwardInvocationViewController.m in Sources */,
@@ -808,6 +831,7 @@
 				386D4CC91CD086F00066CFCE /* ZWSdWebImageTestViewController.m in Sources */,
 				385FCF8F1CE315280095C271 /* ZWPickerViewController.m in Sources */,
 				380FF7281CBCAF3300EF1528 /* ZWAssociatedViewController.m in Sources */,
+				38B065CC1DBF45BD00085E14 /* ZWSubMoveToSuperView.m in Sources */,
 				3886832B1DADD551005A344B /* ZWResponderChainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

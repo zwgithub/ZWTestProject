@@ -39,7 +39,9 @@
     [self.view addSubview:_tableView];
     
     _dataArray = @[
-                   
+  
+  @{@"ZWWillMoveToSuperViewController" : @"willMoveToSuperView测试"},
+  @{@"ZWTimerViewController" : @"定时器测试"},
                        @{@"ZWResponderChainViewController" : @"响应者链"},
                        @{@"ZWCustomCollectViewController" : @"自定义CollectionView布局"},
                        @{@"ZWCollectionViewController" : @"CollectionView"},
