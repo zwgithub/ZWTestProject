@@ -352,6 +352,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 }
 
 - (NSOperation *)queryDiskCacheForKey:(NSString *)key done:(SDWebImageQueryCompletedBlock)doneBlock {
+    NSLog(@"aaaaaaa");
     if (!doneBlock) {
         return nil;
     }

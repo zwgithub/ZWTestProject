@@ -80,8 +80,17 @@
     
     NSDictionary *dic = [_dataArray objectAtIndex:indexPath.row];
     NSString *str = [[dic allKeys] objectAtIndex:0];
-    SEL sel = NSSelectorFromString(str);
-    [self performSelector:sel withObject:nil];
+    //直接用 performSelector: 会产生 PerformSelector may cause a leak because its selector is unknown 警告。如果直接用 [self performSelector:@selector(serial_dispatch) withObject:nil] 来调用则不会产生警告，因为在编译期间返回值信息一经确认。如果直接用 [self performSelector:sel withObject:nil] 的话，这些信息是不确认的，所以产生了警告。
+    
+    //SEL sel = NSSelectorFromString(str);
+    //[self performSelector:sel withObject:nil];
+    
+    [self performSelector:@selector(serial_dispatch) withObject:nil];
+    SEL selector = NSSelectorFromString(str);
+    IMP imp = [self methodForSelector:selector];
+    void (*fun)() = (void*)imp;
+    fun();
+    
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

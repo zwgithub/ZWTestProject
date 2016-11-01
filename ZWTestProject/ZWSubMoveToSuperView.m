@@ -19,4 +19,9 @@
 }
 */
 
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    [super willMoveToSuperview:newSuperview];
+    NSLog(@"12345");
+}
+
 @end
